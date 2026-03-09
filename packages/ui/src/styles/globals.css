@@ -2,7 +2,10 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
-@import "@fontsource-variable/fraunces";
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/700.css";
 
 @custom-variant dark (&:is(.dark *));
 @source "../../../apps/**/*.{ts,tsx,astro}";
@@ -124,7 +127,13 @@
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
     --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
-    --font-display: 'Fraunces Variable', 'Georgia', serif;
+    --font-display: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Gradient highlight for title words (brand teal #79CBC3 → #1D5566) */
+.title-gradient {
+    @apply inline leading-[0] bg-clip-text text-transparent font-bold;
+    background-image: linear-gradient(to bottom right, #79CBC3, #1D5566);
 }
 
 @layer base {

@@ -21,6 +21,10 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@fontsource-variable/fraunces": "^5.2.9"
-  }
+    "@fontsource/poppins": "^5.1.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
 }

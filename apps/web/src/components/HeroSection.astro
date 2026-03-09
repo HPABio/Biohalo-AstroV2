@@ -3,6 +3,34 @@ import { Button } from "@workspace/ui/components/button"
 ---
 
 <section class="relative flex min-h-svh items-center justify-center overflow-hidden">
+  <!-- Base background (BG rays) -->
+  <div class="absolute inset-0 -z-20">
+    <img
+      src="https://framerusercontent.com/images/jDstuQwhf2SzTvmqF9d4STgqd5E.svg"
+      class="h-full w-full object-fill object-center"
+      alt=""
+    />
+  </div>
+
+  <!-- Rays layer -->
+  <div class="pointer-events-none absolute inset-0 -z-10">
+    <img
+      src="https://framerusercontent.com/images/ONh7sesUBq0eUuVYg864evt0i4g.svg"
+      class="absolute left-1/2 top-0 h-[1154px] w-[430px] -translate-x-1/2 -rotate-[31deg] object-cover"
+      alt=""
+    />
+    <img
+      src="https://framerusercontent.com/images/ONh7sesUBq0eUuVYg864evt0i4g.svg"
+      class="absolute left-[20%] top-0 h-[1154px] w-[430px] -rotate-[31deg] object-cover"
+      alt=""
+    />
+    <img
+      src="https://framerusercontent.com/images/ONh7sesUBq0eUuVYg864evt0i4g.svg"
+      class="absolute right-[20%] top-0 h-[1154px] w-[430px] -rotate-[31deg] object-cover"
+      alt=""
+    />
+  </div>
+
   <!-- Radial glow (neutral, no blue tint) -->
   <div
     class="pointer-events-none absolute inset-0"
@@ -33,11 +61,9 @@ import { Button } from "@workspace/ui/components/button"
       <span class="text-xs font-medium tracking-wide text-primary">Pioneering Sustainable Marine Chemistry</span>
     </div>
 
-    <h1 class="mx-auto max-w-4xl font-display text-5xl font-semibold leading-[1.1] tracking-[-0.02em] text-foreground md:text-7xl lg:text-8xl">
+    <h1 class="mx-auto max-w-4xl font-display text-5xl font-normal leading-[1.1] tracking-[-0.02em] text-foreground md:text-7xl lg:text-8xl">
       Biofluorination for a
-      <span class="bg-gradient-to-r from-primary via-teal-bright to-primary bg-clip-text text-transparent">
-        Cleaner Ocean
-      </span>
+      <span class="title-gradient">Cleaner Ocean</span>
     </h1>
 
     <p class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg md:leading-relaxed">
