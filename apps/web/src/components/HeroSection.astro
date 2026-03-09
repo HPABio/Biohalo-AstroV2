@@ -1,6 +1,8 @@
 ---
 import { Button } from "@workspace/ui/components/button"
 import Hero from "./Hero.astro"
+// import { LightRays } from "@workspace/ui/components/light-rays"
+import LightRaysComponent from "./LightRays"
 ---
 
 <section class="relative flex min-h-svh items-center justify-center overflow-hidden">
@@ -10,13 +12,19 @@ import Hero from "./Hero.astro"
     <div class="absolute inset-0">
       <img
         src="https://framerusercontent.com/images/jDstuQwhf2SzTvmqF9d4STgqd5E.svg"
-        class="h-full w-full object-fill object-center"
+        class="h-full w-full object-fill object-center scale-150"
         alt=""
       />
     </div>
 
     <!-- Rays layer -->
-    <div class="pointer-events-none absolute inset-0">
+    <LightRaysComponent
+      client:visible
+      raysSpeed={2.1}
+      raysColor="#a8e8e0"
+      className="absolute inset-0 z-10 opacity-90 rotate-180 "
+    />
+    <div class="hidden pointer-events-none absolute inset-0">
     <img
       src="https://framerusercontent.com/images/ONh7sesUBq0eUuVYg864evt0i4g.svg"
       class="absolute left-1/2 top-0 h-[1154px] w-[430px] -translate-x-1/2 -rotate-[31deg] object-cover"

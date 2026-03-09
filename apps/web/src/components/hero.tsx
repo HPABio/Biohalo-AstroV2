@@ -1,8 +1,8 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Badge } from "@workspace/ui/components/badge";
+import { Button } from "@workspace/ui/components/button";
 import { ArrowUpRight, CirclePlay } from "lucide-react";
 import BioHaloLogoSVG from "@/assets/provided_materials/BioHalo_Logo_Green/BioHalo - Green_Logo_White.svg";
-import AtomDiagram from "@/components/ui/atom-diagram.tsx";
+import AtomDiagram from "@/components/atom-diagram";
 // import Image from "@/components/ui/Image";
 
 export default function Hero() {
@@ -10,20 +10,19 @@ export default function Hero() {
     <div className="min-h-screen flex items-center justify-center p-16">
       <div className="text-center max-w-3xl">
 
-        <Badge
-          variant="default"
-          className="rounded-full py-1 border-border opacity-50"
-          asChild
-        >
-          <a href="#" className="flex items-center gap-2">
+        <a href="#" className="inline-block">
+          <Badge
+            variant="default"
+            className="rounded-full py-1 border-border opacity-50 flex items-center gap-2 w-fit"
+          >
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
               <span className="relative rounded-full mt-0.5 h-2 w-2 bg-teal-500"></span>
             </span>
             Currently Raising Funds
             <ArrowUpRight className="ml-1 size-4" />
-          </a>
-        </Badge>
+          </Badge>
+        </a>
         
         <div className="flex items-center justify-center -mt-2 mb-6">
           <img

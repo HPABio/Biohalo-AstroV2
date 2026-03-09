@@ -1,4 +1,6 @@
 ---
+import logo from "../assets/images/BioHaloLogo.png"
+
 const columns = [
   {
     title: "Product",
@@ -41,9 +43,13 @@ const columns = [
       <!-- Brand -->
       <div class="md:col-span-2">
         <a href="/" class="flex items-center gap-2">
-          <div class="flex size-8 items-center justify-center rounded-lg bg-primary">
-            <span class="font-display text-base font-bold text-primary-foreground">B</span>
-          </div>
+          <img
+            src={logo.src}
+            alt="BioHalo"
+            width={logo.width}
+            height={logo.height}
+            class="h-9 w-auto"
+          />
           <span class="font-display text-lg font-semibold tracking-tight text-foreground">BioHalo</span>
         </a>
         <p class="mt-4 max-w-xs text-sm text-muted-foreground">
