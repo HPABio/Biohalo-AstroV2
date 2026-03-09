@@ -1,5 +1,6 @@
 ---
 import { Button } from "@workspace/ui/components/button"
+import { FlickeringGrid } from "@workspace/ui/components/flickering-grid"
 ---
 
 <section id="contact" class="relative py-16 md:py-24">
@@ -7,10 +8,20 @@ import { Button } from "@workspace/ui/components/button"
   <div
     class="pointer-events-none absolute inset-0"
     style="background: radial-gradient(ellipse 60% 60% at 50% 50%, oklch(0.5 0 0 / 0.05) 0%, transparent 70%);"
-  ></div>
+  >
+</div>
 
   <div class="relative mx-auto max-w-screen-lg px-6 text-center">
     <div class="rounded-2xl border border-border/50 bg-gradient-to-b from-card to-background p-8 md:p-16">
+      <FlickeringGrid
+      client:visible
+      className="absolute inset-0 z-10 [mask-image:radial-gradient(800px_circle_at_bottom_right,white,transparent)]"
+      squareSize={4}
+      gridGap={6}
+      color="#a8e8e0"
+      maxOpacity={0.45}
+      flickerChance={0.1}
+    />
       <h2 class="font-display text-3xl font-normal tracking-tight text-foreground md:text-5xl">
         Join Us in Building the Next Generation of
         <span class="title-gradient">Sustainable Coatings</span>

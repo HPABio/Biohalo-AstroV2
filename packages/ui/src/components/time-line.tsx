@@ -73,23 +73,28 @@ export default function TimeLine({
 
   return (
     <div className="mx-auto px-4 py-12 max-w-5xl">
-      <motion.h1
-        className="text-3xl md:text-4xl font-bold mb-2 text-center"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        {title}
-      </motion.h1>
-
-      <motion.p
-        className="text-muted-foreground text-center mb-12"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        {subtitle}
-      </motion.p>
+      {title ? (
+        <>
+          <motion.h1
+            className="text-3xl md:text-4xl font-bold mb-2 text-center"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {title}
+          </motion.h1>
+          <motion.p
+            className="text-muted-foreground text-center mb-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {subtitle}
+          </motion.p>
+        </>
+      ) : (
+        <div className="mb-12" />
+      )}
 
       <div className="relative">
         <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-primary/20 z-0" />

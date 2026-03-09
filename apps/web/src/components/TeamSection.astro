@@ -15,6 +15,8 @@ const team = [
     initials: "AD",
     image: albertoDeMaria,
     credentials: "PhD in metabolic engineering. Expert in biosynthesis pathways.",
+    linkedin: undefined as string | undefined,
+    email: undefined as string | undefined,
   },
   {
     name: "Johann Liebeton",
@@ -22,20 +24,8 @@ const team = [
     initials: "JL",
     image: johannLiebeton,
     credentials: "MSc BA & Bio-entrepreneurship. Experience in early-stage operations.",
-  },
-  {
-    name: "Nicolas Krink",
-    role: "Co-founder & Fundraising Advisor",
-    initials: "NK",
-    image: nicoKrink,
-    credentials: "PhD in bioengineering. Venture capital experience and strong network.",
-  },
-  {
-    name: "Pablo Nikel",
-    role: "Co-founder & Advisor",
-    initials: "PN",
-    image: pabloNikel,
-    credentials: "Full Professor, h-index 51. Editor-in-Chief, Current Opinion in Biotechnology.",
+    linkedin: undefined as string | undefined,
+    email: undefined as string | undefined,
   },
   {
     name: "Arthur Vancolen",
@@ -43,6 +33,26 @@ const team = [
     initials: "AV",
     image: arthurVancolen,
     credentials: "MSc in Biotechnology. Molecular biology and fermentation expertise.",
+    linkedin: undefined as string | undefined,
+    email: undefined as string | undefined,
+  },
+  {
+    name: "Pablo Nikel",
+    role: "Co-founder & Scientific Advisor",
+    initials: "PN",
+    image: pabloNikel,
+    credentials: "Full Professor, h-index 51. Editor-in-Chief, Current Opinion in Biotechnology.",
+    linkedin: undefined as string | undefined,
+    email: undefined as string | undefined,
+  },
+  {
+    name: "Nicolas Krink",
+    role: "Co-founder & Fundraising Advisor",
+    initials: "NK",
+    image: nicoKrink,
+    credentials: "PhD in bioengineering. Venture capital experience and strong network.",
+    linkedin: undefined as string | undefined,
+    email: undefined as string | undefined,
   },
   {
     name: "Andreas Heyl",
@@ -50,6 +60,8 @@ const team = [
     initials: "AH",
     image: undefined,
     credentials: "Leading R&D teams. Former co-founder and CTO of Insempra.",
+    linkedin: undefined as string | undefined,
+    email: undefined as string | undefined,
   },
 ]
 ---
@@ -88,14 +100,69 @@ const team = [
                 <span class="text-sm font-semibold text-primary">{member.initials}</span>
               </div>
             )}
-            <div class="flex min-w-0 flex-col gap-1">
-              <h3 class="truncate text-base font-semibold text-foreground">{member.name}</h3>
+            <div class="flex min-w-0 flex-1 flex-col gap-1">
+              <h3 class="truncate text-base font-semibold text-foreground inline-flex items-center gap-2">
+                <a
+                  href={member.linkedin ?? "#"}
+                  target={member.linkedin ? "_blank" : undefined}
+                  rel={member.linkedin ? "noopener noreferrer" : undefined}
+                  class="flex size-7 items-center justify-center rounded text-muted-foreground transition-colors hover:text-primary"
+                  aria-label={`${member.name} on LinkedIn`}
+                  >
+                  <svg class="size-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+                  {member.name}
+              </h3>
               <span class="text-xs font-medium text-primary">{member.role}</span>
               <p class="mt-1 text-sm text-muted-foreground">{member.credentials}</p>
+              <div class="mt-2 flex gap-2">
+                
+                {/* <a
+                  href={member.email ? `mailto:${member.email}` : "mailto:contact@biohalo.com"}
+                  class="flex size-7 items-center justify-center rounded text-muted-foreground transition-colors hover:text-primary"
+                  aria-label={`Email ${member.name}`}
+                >
+                  <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </a> */}
+              </div>
             </div>
           </CardContent>
         </Card>
       ))}
+    </div>
+
+    <div class="mt-20 flex flex-col items-center gap-8 text-center">
+      <h3 class="font-display text-4xl font-normal tracking-tight text-foreground md:text-6xl lg:text-7xl">
+        <span class="title-gradient">Get in touch</span>
+      </h3>
+      <div class="flex items-center gap-6">
+        <a
+          href="https://www.linkedin.com/company/biohalo"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex size-12 items-center justify-center rounded-full bg-muted text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground md:size-14"
+          aria-label="BioHalo on LinkedIn"
+        >
+          <svg class="size-6 md:size-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+        <a
+          href="mailto:contact@biohalo.com"
+          class="flex size-12 items-center justify-center rounded-full bg-muted text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground md:size-14"
+          aria-label="Email BioHalo"
+        >
+          <svg class="size-6 md:size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>
