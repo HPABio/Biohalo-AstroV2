@@ -2,41 +2,53 @@
 import { Card, CardContent } from "@workspace/ui/components/card"
 import { Badge } from "@workspace/ui/components/badge"
 
+import albertoDeMaria from "@/assets/images/BioHaloTeam/AlbertoDeMaria.png"
+import johannLiebeton from "@/assets/images/BioHaloTeam/JohannLiebeton.png"
+import nicoKrink from "@/assets/images/BioHaloTeam/NicoKrink.png"
+import pabloNikel from "@/assets/images/BioHaloTeam/PabloNikel.png"
+import arthurVancolen from "@/assets/images/BioHaloTeam/ArthurVancolen.png"
+
 const team = [
   {
     name: "Alberto De Maria",
     role: "Co-founder & CSO",
     initials: "AD",
+    image: albertoDeMaria,
     credentials: "PhD in metabolic engineering. Expert in biosynthesis pathways.",
   },
   {
     name: "Johann Liebeton",
     role: "Co-founder & CEO",
     initials: "JL",
+    image: johannLiebeton,
     credentials: "MSc BA & Bio-entrepreneurship. Experience in early-stage operations.",
   },
   {
     name: "Nicolas Krink",
     role: "Co-founder & Fundraising Advisor",
     initials: "NK",
+    image: nicoKrink,
     credentials: "PhD in bioengineering. Venture capital experience and strong network.",
   },
   {
     name: "Pablo Nikel",
     role: "Co-founder & Advisor",
     initials: "PN",
+    image: pabloNikel,
     credentials: "Full Professor, h-index 51. Editor-in-Chief, Current Opinion in Biotechnology.",
   },
   {
     name: "Arthur Vancolen",
     role: "Research Assistant",
     initials: "AV",
+    image: arthurVancolen,
     credentials: "MSc in Biotechnology. Molecular biology and fermentation expertise.",
   },
   {
     name: "Andreas Heyl",
     role: "Scientific Commercialization Advisor",
     initials: "AH",
+    image: undefined,
     credentials: "Leading R&D teams. Former co-founder and CTO of Insempra.",
   },
 ]
@@ -63,9 +75,19 @@ const team = [
       {team.map((member) => (
         <Card className="group border-none bg-gradient-to-br from-card to-card/50 ring-1 ring-border/50 transition-all hover:ring-primary/30">
           <CardContent className="flex items-start gap-4 pt-2">
-            <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
-              <span class="text-sm font-semibold text-primary">{member.initials}</span>
-            </div>
+            {member.image ? (
+              <img
+                src={member.image.src}
+                alt={member.name}
+                width={48}
+                height={48}
+                class="size-12 shrink-0 rounded-full object-cover ring-1 ring-border/50"
+              />
+            ) : (
+              <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                <span class="text-sm font-semibold text-primary">{member.initials}</span>
+              </div>
+            )}
             <div class="flex min-w-0 flex-col gap-1">
               <h3 class="truncate text-base font-semibold text-foreground">{member.name}</h3>
               <span class="text-xs font-medium text-primary">{member.role}</span>
