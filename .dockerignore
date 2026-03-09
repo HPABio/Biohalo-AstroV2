@@ -1,0 +1,29 @@
+# Dependencies and build artifacts
+node_modules
+**/node_modules
+apps/web/dist
+**/.turbo
+.turbo
+
+# Git and IDE
+.git
+.gitignore
+.cursor
+.vscode
+.idea
+*.log
+
+# Optional: exclude large dev/data folders not needed for build
+apps/web/src/data
+
+# Docs and local config (not needed in image)
+*.md
+.env
+.env.*
+!.env.example
+
+# Tests and tooling
+**/*.test.*
+**/*.spec.*
+coverage
+.nyc_output
