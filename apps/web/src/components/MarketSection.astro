@@ -1,0 +1,88 @@
+---
+import { Badge } from "@workspace/ui/components/badge"
+import { Card, CardContent } from "@workspace/ui/components/card"
+---
+
+<section class="relative py-16 md:py-24">
+  <div
+    class="pointer-events-none absolute inset-0"
+    style="background: radial-gradient(ellipse 50% 50% at 80% 50%, oklch(0.75 0.15 185 / 0.04) 0%, transparent 70%);"
+  ></div>
+
+  <div class="relative mx-auto max-w-screen-xl px-6">
+    <div class="mb-8 md:mb-16">
+      <Badge variant="outline" className="mb-4">Market</Badge>
+      <h2 class="max-w-3xl font-display text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
+        A $10B Underwater Coatings Market
+      </h2>
+      <p class="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
+        Strong regulatory tailwinds and growing environmental awareness are
+        driving demand for sustainable antifouling solutions.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      <!-- Surface coatings market -->
+      <Card className="border-none bg-gradient-to-br from-card to-card/50 ring-1 ring-border/50 md:col-span-2">
+        <CardContent className="flex flex-col gap-6 pt-2">
+          <div class="flex flex-col gap-1">
+            <span class="text-xs font-medium uppercase tracking-wider text-muted-foreground">Global Surface Coatings</span>
+            <div class="flex items-baseline gap-3">
+              <span class="font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl">$222B</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <span class="font-display text-4xl font-bold tracking-tight text-primary md:text-5xl">$314B</span>
+            </div>
+            <span class="text-sm text-muted-foreground">Projected growth by 2032 at 5.1% CAGR</span>
+          </div>
+
+          <!-- Visual bar -->
+          <div class="flex flex-col gap-2">
+            <div class="h-3 w-full overflow-hidden rounded-full bg-secondary">
+              <div class="h-full rounded-full bg-gradient-to-r from-primary/60 to-primary" style="width: 70%"></div>
+            </div>
+            <div class="flex justify-between text-xs text-muted-foreground">
+              <span>2025</span>
+              <span>5.1% CAGR</span>
+              <span>2032</span>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      <!-- BioHalo target -->
+      <Card className="border-none bg-gradient-to-br from-primary/10 to-card/30 ring-1 ring-primary/20">
+        <CardContent className="flex h-full flex-col justify-between gap-4 pt-2">
+          <div class="flex flex-col gap-1">
+            <span class="text-xs font-medium uppercase tracking-wider text-primary">BioHalo Target</span>
+            <span class="font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl">$50M+</span>
+            <span class="text-sm text-muted-foreground">Annual sales targeting 5% of antifouling raw materials</span>
+          </div>
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-muted-foreground">Underwater coatings</span>
+              <span class="font-medium text-primary">$10B+</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-muted-foreground">Growth rate</span>
+              <span class="font-medium text-primary">6-8% annually</span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-muted-foreground">PFAS replacement</span>
+              <span class="font-medium text-primary">&euro;25B+ global</span>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+
+    <!-- Geographic targets -->
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <span class="text-sm text-muted-foreground">Target regions:</span>
+      <Badge variant="secondary">Europe</Badge>
+      <Badge variant="secondary">Japan</Badge>
+      <Badge variant="secondary">United States</Badge>
+      <Badge variant="secondary">Scandinavia</Badge>
+      <Badge variant="secondary">Australia</Badge>
+    </div>
+  </div>
+</section>

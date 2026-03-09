@@ -1,0 +1,78 @@
+---
+import { Badge } from "@workspace/ui/components/badge"
+
+const milestones = [
+  {
+    year: "2026",
+    items: [
+      "Strain optimization",
+      "First m\u00B3-scale production (300 kg)",
+      "Pilot agreements with coating manufacturers",
+    ],
+  },
+  {
+    year: "2027",
+    items: [
+      "REACH dossier submitted",
+      "EU regulatory approval",
+      "Production scaled to 3,000 kg",
+      "Offtake agreements signed",
+      "Series A (\u20AC25\u201350M)",
+    ],
+  },
+  {
+    year: "2028",
+    items: [
+      "Market launch of 2-FMA coatings",
+      "Strategic partnerships with Hempel, Jotun",
+      "Geographic expansion begins",
+    ],
+  },
+  {
+    year: "2029+",
+    items: [
+      "Break-even at 100+ tonnes",
+      "Large-scale production",
+      "Leading supplier of sustainable coatings",
+    ],
+  },
+]
+---
+
+<section id="roadmap" class="relative py-16 md:py-24">
+  <div class="mx-auto max-w-screen-xl px-6">
+    <div class="mb-8 text-center md:mb-16">
+      <Badge variant="outline" className="mb-4">Roadmap</Badge>
+      <h2 class="font-display text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
+        Development Roadmap
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+        An ambitious development timeline bringing sustainable antifouling
+        from lab to global market.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative mx-auto max-w-3xl">
+      <!-- Vertical line -->
+      <div class="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-border to-transparent md:left-1/2"></div>
+
+      {milestones.map((milestone, idx) => (
+        <div class={`relative mb-12 flex flex-col gap-4 pl-12 md:w-1/2 md:pl-0 ${idx % 2 === 0 ? "md:pr-12" : "md:ml-auto md:pl-12"}`}>
+          {/* Dot on timeline */}
+          <div class={`absolute left-2.5 top-1 size-3 rounded-full border-2 border-primary bg-background md:top-1 ${idx % 2 === 0 ? "md:left-auto md:-right-1.5" : "md:-left-1.5"}`}></div>
+
+          <Badge variant="default" className="w-fit">{milestone.year}</Badge>
+          <ul class="flex flex-col gap-2">
+            {milestone.items.map((item) => (
+              <li class="flex items-start gap-2 text-sm text-muted-foreground">
+                <span class="mt-2 size-1 shrink-0 rounded-full bg-primary/50"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

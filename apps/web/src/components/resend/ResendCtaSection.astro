@@ -1,0 +1,27 @@
+---
+/**
+ * Resend-style final CTA: "Email reimagined. Available today." with Get started + Learn more.
+ */
+import { Button } from "@workspace/ui/components/button"
+---
+
+<section class="relative py-24 md:py-32" data-figma-node="resend-cta">
+  <div class="mx-auto max-w-screen-xl px-6 text-center md:px-[104px]">
+    <h2 class="font-display text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
+      Email reimagined. Available today.
+    </h2>
+    <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <a href="/signup">
+        <Button size="lg" className="h-12 rounded-full bg-white px-8 text-black hover:bg-white/90">
+          Get started
+          <span class="ml-2 inline-block size-5">→</span>
+        </Button>
+      </a>
+      <a href="/docs">
+        <Button variant="outline" size="lg" className="h-12 rounded-full border-white/30 px-8">
+          Learn more
+        </Button>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+---
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@workspace/ui/components/card"
+import { Badge } from "@workspace/ui/components/badge"
+
+const features = [
+  {
+    title: "Non-Biocidal",
+    description: "Our compounds protect surfaces without releasing toxic substances into marine environments.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  },
+  {
+    title: "Biodegradable",
+    description: "OECD 301B certified biodegradability ensures zero persistent environmental impact.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22c1.25-1.25 2.5-2.5 4-3.5 1.5-1 3-1.5 4.5-1.5 1.5 0 3 .5 4.5 1.5 1.5 1 3 2.25 4 3.5"/><path d="M12 2v10"/><path d="M8 6c2.5 0 4 1.5 4 4"/><path d="M16 6c-2.5 0-4 1.5-4 4"/></svg>`,
+  },
+  {
+    title: "Low Fluorine",
+    description: "Controlled mono-fluorination delivers the performance of fluorochemicals with minimal fluorine content.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12"/><path d="M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M18 9v6a6 6 0 0 1-12 0"/></svg>`,
+  },
+  {
+    title: "Durable",
+    description: "Long-lasting fouling protection that maintains effectiveness between dry docking cycles.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>`,
+  },
+  {
+    title: "Compatible",
+    description: "Integrates seamlessly with standard binder systems used by major coating manufacturers.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>`,
+  },
+  {
+    title: "Regulation-Aligned",
+    description: "Designed to comply with EU and IMO regulations, including upcoming PFAS restrictions.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`,
+  },
+]
+---
+
+<section id="solution" class="relative py-16 md:py-24">
+  <div
+    class="pointer-events-none absolute inset-0"
+    style="background: radial-gradient(ellipse 40% 50% at 20% 50%, oklch(0.75 0.15 185 / 0.05) 0%, transparent 70%);"
+  ></div>
+
+  <div class="relative mx-auto max-w-screen-xl px-6">
+    <div class="mb-8 text-center md:mb-16">
+      <Badge variant="outline" className="mb-4">Our Solution</Badge>
+      <h2 class="font-display text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
+        A Biological Alternative
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+        BioHalo develops biotechnologically produced mono-fluorinated compounds
+        as antifouling ingredients that are safe, effective, and future-proof.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {features.map((feature) => (
+        <Card className="group border-none bg-gradient-to-br from-card to-card/50 ring-1 ring-border/50 transition-all hover:ring-primary/30">
+          <CardHeader>
+            <div class="mb-2 flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
+              <Fragment set:html={feature.icon} />
+            </div>
+            <CardTitle>{feature.title}</CardTitle>
+            <CardDescription>{feature.description}</CardDescription>
+          </CardHeader>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+---
+/**
+ * Resend-style trust strip: "Companies of all sizes trust Resend..." + logo row.
+ * From Figma Section with border-t and gradient divider.
+ */
+interface Props {
+  /** Optional list of logo names for the strip (displayed as text or use slot) */
+  logoLabels?: string[]
+}
+
+const { logoLabels = ["Vercel", "Raycast", "Supabase", "Ping", "Combinator"] } = Astro.props
+---
+
+<section
+  class="relative mx-auto max-w-screen-xl px-6 py-16 md:px-[104px]"
+  data-figma-node="resend-trust-strip"
+>
+  <div class="rounded-2xl border border-white/10 bg-card/50 py-12 text-center">
+    <p class="mx-auto max-w-md text-lg leading-relaxed text-muted-foreground">
+      Companies of all sizes trust Resend to deliver their most important emails.
+    </p>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-8 md:gap-12">
+      {logoLabels.map((label) => (
+        <span
+          class="text-sm font-medium uppercase tracking-wider text-muted-foreground/80"
+          aria-hidden="true"
+        >
+          {label}
+        </span>
+      ))}
+    </div>
+    <!-- Gradient line (from Figma div.top-0) -->
+    <div
+      class="absolute left-[38%] right-[38%] top-0 h-px"
+      style="background: linear-gradient(90deg, transparent 0%, rgba(143,143,143,0.67) 50%, transparent 100%);"
+      aria-hidden="true"
+    />
+  </div>
+</section>

@@ -1,0 +1,49 @@
+---
+/**
+ * Demo page: Resend.com-style layout using components built from Figma design
+ * https://www.figma.com/design/EbdXxNUawnzQKlnnJlJa1L/
+ */
+import MainLayout from "../layouts/main.astro"
+import ResendHeader from "../components/resend/ResendHeader.astro"
+import ResendHero from "../components/resend/ResendHero.astro"
+import ResendTrustStrip from "../components/resend/ResendTrustStrip.astro"
+import ResendIntegrationSection from "../components/resend/ResendIntegrationSection.astro"
+import ResendFeatureCard from "../components/resend/ResendFeatureCard.astro"
+import ResendCtaSection from "../components/resend/ResendCtaSection.astro"
+import ResendFooter from "../components/resend/ResendFooter.astro"
+---
+
+<MainLayout title="Resend-style demo — BioHalo">
+  <ResendHeader />
+  <main>
+    <ResendHero />
+    <ResendTrustStrip />
+    <ResendIntegrationSection />
+    <section class="mx-auto max-w-screen-xl px-6 py-24 md:px-[104px]">
+      <h2 class="mb-10 text-center font-display text-3xl font-semibold tracking-tight text-foreground">
+        First-class developer experience
+      </h2>
+      <p class="mx-auto mb-12 max-w-2xl text-center text-muted-foreground">
+        Build beautiful emails directly within the editor. Connect to your data layer, or use our API.
+      </p>
+      <div class="grid gap-6 md:grid-cols-2">
+        <ResendFeatureCard
+          title="Real-time previews"
+          description="Build beautiful emails directly within the editor. See changes instantly with our built-in preview."
+        >
+          <div class="rounded-lg border border-white/10 bg-black/50 p-4 text-sm text-muted-foreground">
+            Preview panel placeholder
+          </div>
+        </ResendFeatureCard>
+        <ResendFeatureCard
+          title="Type-safe schemas"
+          description="Stop guessing what your emails look like. Type-safe schemas provide a consistent experience."
+        >
+          <pre class="overflow-x-auto rounded-lg border border-white/10 bg-black/50 p-4 text-xs text-muted-foreground"><code>{"interface EmailSchema { ... }"}</code></pre>
+        </ResendFeatureCard>
+      </div>
+    </section>
+    <ResendCtaSection />
+    <ResendFooter />
+  </main>
+</MainLayout>

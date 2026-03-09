@@ -8,6 +8,11 @@ import react from "@astrojs/react"
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      watch: {
+        ignored: ["**/src/data/**"],
+      },
+    },
   },
   integrations: [react()],
 })

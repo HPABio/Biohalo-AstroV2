@@ -1,25 +1,32 @@
 ---
-import "@workspace/ui/globals.css"
-import { Button } from "@workspace/ui/components/button"
+import MainLayout from "../layouts/main.astro"
+import NavBar from "../components/NavBar.astro"
+import HeroSection from "../components/HeroSection.astro"
+import ProblemSection from "../components/ProblemSection.astro"
+import SolutionSection from "../components/SolutionSection.astro"
+import TechnologySection from "../components/TechnologySection.astro"
+import ProductSection from "../components/ProductSection.astro"
+import MarketSection from "../components/MarketSection.astro"
+import RoadmapSection from "../components/RoadmapSection.astro"
+import TeamSection from "../components/TeamSection.astro"
+import FundingSection from "../components/FundingSection.astro"
+import CTASection from "../components/CTASection.astro"
+import Footer from "../components/Footer.astro"
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Astro App</title>
-  </head>
-  <body>
-    <div class="flex min-h-svh p-6">
-      <div class="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 class="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We've already added the button component for you.</p>
-          <Button client:load className="mt-2">Button</Button>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+<MainLayout>
+  <NavBar />
+  <main>
+    <HeroSection />
+    <ProblemSection />
+    <SolutionSection />
+    <TechnologySection />
+    <ProductSection />
+    <MarketSection />
+    <RoadmapSection />
+    <TeamSection />
+    <FundingSection />
+    <CTASection />
+  </main>
+  <Footer />
+</MainLayout>

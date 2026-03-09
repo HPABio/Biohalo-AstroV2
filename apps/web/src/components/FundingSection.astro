@@ -1,0 +1,73 @@
+---
+import { Card, CardContent } from "@workspace/ui/components/card"
+import { Badge } from "@workspace/ui/components/badge"
+import { Separator } from "@workspace/ui/components/separator"
+
+const funders = [
+  { name: "BII", instrument: "Convertible Loan", amount: "\u20AC1.8M" },
+  { name: "BlueYard Capital", instrument: "Convertible Loan", amount: "$200K" },
+  { name: "DASA", instrument: "Contract", amount: "\u00A3100K" },
+  { name: "Denmark Grants", instrument: "Grant", amount: "\u20AC355K" },
+  { name: "EU Grants", instrument: "Grant", amount: "\u20AC155K" },
+]
+
+const milestones = [
+  { date: "July 2023", event: "BioHalo founded" },
+  { date: "Feb 2024", event: "New monofluorinated monomer developed" },
+  { date: "May 2024", event: "2-FMA production scaled to 100L pilot" },
+  { date: "Jan 2025", event: "Fermentation throughput increased 4\u00D7" },
+  { date: "Aug 2025", event: "Surface dip coating developed" },
+]
+---
+
+<section class="relative py-16 md:py-24">
+  <div class="mx-auto max-w-screen-xl px-6">
+    <div class="mb-8 text-center md:mb-16">
+      <Badge variant="outline" className="mb-4">Backing</Badge>
+      <h2 class="font-display text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
+        Funding & Milestones
+      </h2>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2">
+      <!-- Funding -->
+      <div>
+        <h3 class="mb-6 font-display text-xl font-semibold text-foreground">Funding Secured</h3>
+        <div class="flex flex-col gap-3">
+          {funders.map((funder) => (
+            <Card className="border-none bg-card/50 ring-1 ring-border/50">
+              <CardContent className="flex items-center justify-between gap-4 py-1 pt-1">
+                <div class="flex flex-col gap-0.5">
+                  <span class="text-sm font-medium text-foreground">{funder.name}</span>
+                  <Badge variant="secondary" className="w-fit text-xs">{funder.instrument}</Badge>
+                </div>
+                <span class="font-display text-lg font-bold text-primary">{funder.amount}</span>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      <!-- Milestones -->
+      <div>
+        <h3 class="mb-6 font-display text-xl font-semibold text-foreground">Key Milestones</h3>
+        <div class="flex flex-col gap-4">
+          {milestones.map((m, i) => (
+            <div class="flex items-start gap-4">
+              <div class="flex flex-col items-center">
+                <div class="size-2.5 rounded-full border-2 border-primary bg-background"></div>
+                {i < milestones.length - 1 && (
+                  <div class="h-8 w-px bg-border"></div>
+                )}
+              </div>
+              <div class="flex flex-col gap-0.5 -mt-1">
+                <span class="text-xs font-medium text-primary">{m.date}</span>
+                <span class="text-sm text-foreground">{m.event}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+import { Button } from "@workspace/ui/components/button"
+---
+
+<section id="contact" class="relative py-16 md:py-24">
+  <!-- Glow -->
+  <div
+    class="pointer-events-none absolute inset-0"
+    style="background: radial-gradient(ellipse 60% 60% at 50% 50%, oklch(0.75 0.15 185 / 0.08) 0%, transparent 70%);"
+  ></div>
+
+  <div class="relative mx-auto max-w-screen-lg px-6 text-center">
+    <div class="rounded-2xl border border-border/50 bg-gradient-to-b from-card to-background p-8 md:p-16">
+      <h2 class="font-display text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
+        Join Us in Building the Next Generation of
+        <span class="text-primary">Sustainable Coatings</span>
+      </h2>
+      <p class="mx-auto mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
+        Whether you're a coating manufacturer, investor, or research partner,
+        we'd love to explore how BioHalo can work for you.
+      </p>
+
+      <div class="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
+        <a href="mailto:contact@biohalo.com">
+          <Button size="lg" className="h-12 px-8 text-base">
+            Get in Touch
+          </Button>
+        </a>
+        <a href="#problem">
+          <Button variant="outline" size="lg" className="h-12 px-8 text-base">
+            Learn More
+          </Button>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,84 @@
+---
+import { Badge } from "@workspace/ui/components/badge"
+import { Card, CardContent } from "@workspace/ui/components/card"
+
+const steps = [
+  {
+    num: "01",
+    title: "Feedstock",
+    description: "Renewable or waste-derived carbon sources serve as the starting material for our bioprocess.",
+  },
+  {
+    num: "02",
+    title: "Engineered Microbes",
+    description: "Proprietary microbial strains with optimized metabolic pathways perform controlled fluorination.",
+  },
+  {
+    num: "03",
+    title: "Biofluorination",
+    description: "Enzymatic mono-fluorination at ambient conditions — low energy, minimal by-products.",
+  },
+  {
+    num: "04",
+    title: "Products",
+    description: "High-purity 2-FMA and related compounds ready for integration into coating formulations.",
+  },
+]
+
+const advantages = [
+  { label: "Low Energy Demand", value: "Ambient fermentation" },
+  { label: "GHG Reduction", value: ">50% vs traditional" },
+  { label: "Feedstock", value: "Renewable / waste" },
+  { label: "By-products", value: "Minimal" },
+]
+---
+
+<section id="technology" class="relative py-16 md:py-24">
+  <div
+    class="pointer-events-none absolute inset-0"
+    style="background: radial-gradient(ellipse 50% 40% at 50% 60%, oklch(0.75 0.15 185 / 0.06) 0%, transparent 70%);"
+  ></div>
+
+  <div class="relative mx-auto max-w-screen-xl px-6">
+    <div class="mb-8 md:mb-16">
+      <Badge variant="outline" className="mb-4">Technology</Badge>
+      <h2 class="max-w-2xl font-display text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
+        Microbial Biofluorination
+      </h2>
+      <p class="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
+        A breakthrough platform that uses microorganisms to perform controlled
+        mono-fluorination — producing compounds previously impossible to synthesize.
+      </p>
+    </div>
+
+    <!-- Process flow -->
+    <div class="grid gap-4 md:grid-cols-4">
+      {steps.map((step, i) => (
+        <div class="group relative">
+          <Card className="h-full border-none bg-gradient-to-b from-card to-card/30 ring-1 ring-border/50 transition-all hover:ring-primary/30">
+            <CardContent className="flex flex-col gap-3 pt-2">
+              <span class="font-display text-3xl font-bold text-primary/40">{step.num}</span>
+              <h3 class="text-base font-semibold text-foreground">{step.title}</h3>
+              <p class="text-sm text-muted-foreground">{step.description}</p>
+            </CardContent>
+          </Card>
+          {i < steps.length - 1 && (
+            <div class="absolute top-1/2 -right-4 hidden -translate-y-1/2 text-muted-foreground/30 md:block">
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <!-- Advantages -->
+    <div class="mt-12 grid gap-4 md:grid-cols-4">
+      {advantages.map((adv) => (
+        <div class="flex flex-col gap-1 rounded-xl border border-border/50 bg-card/30 p-4">
+          <span class="text-xs font-medium uppercase tracking-wider text-muted-foreground">{adv.label}</span>
+          <span class="font-display text-lg font-semibold text-primary">{adv.value}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

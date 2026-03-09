@@ -1,0 +1,64 @@
+---
+import { Card, CardContent } from "@workspace/ui/components/card"
+import { Badge } from "@workspace/ui/components/badge"
+---
+
+<section id="problem" class="relative py-16 md:py-24">
+  <!-- Subtle glow -->
+  <div
+    class="pointer-events-none absolute inset-0"
+    style="background: radial-gradient(ellipse 50% 40% at 70% 30%, oklch(0.58 0.22 27 / 0.04) 0%, transparent 70%);"
+  ></div>
+
+  <div class="relative mx-auto max-w-screen-xl px-6">
+    <div class="mb-8 md:mb-16">
+      <Badge variant="outline" className="mb-4">The Challenge</Badge>
+      <h2 class="max-w-2xl font-display text-3xl font-semibold tracking-tight text-foreground md:text-5xl">
+        The Global Impact of Biofouling
+      </h2>
+      <p class="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
+        Marine biofouling on ship hulls and offshore structures leads to
+        increased drag, higher fuel consumption, elevated emissions, and
+        significant maintenance costs.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      <Card className="group relative overflow-hidden border-none bg-gradient-to-br from-card to-card/50 ring-1 ring-border/50 transition-all hover:ring-primary/30">
+        <CardContent className="flex flex-col gap-3 pt-2">
+          <div class="flex size-12 items-center justify-center rounded-xl bg-destructive/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-destructive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+          <div class="font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl">$31B</div>
+          <div class="text-sm text-muted-foreground">
+            Annual cost in increased fuel consumption from hull biofouling worldwide
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="group relative overflow-hidden border-none bg-gradient-to-br from-card to-card/50 ring-1 ring-border/50 transition-all hover:ring-primary/30">
+        <CardContent className="flex flex-col gap-3 pt-2">
+          <div class="flex size-12 items-center justify-center rounded-xl bg-chart-1/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-chart-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"></path><path d="M18 20V4"></path><path d="M6 20v-4"></path></svg>
+          </div>
+          <div class="font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl">40%</div>
+          <div class="text-sm text-muted-foreground">
+            Increase in fuel consumption caused by biofouling on vessel hulls
+          </div>
+        </CardContent>
+      </Card>
+
+      <Card className="group relative overflow-hidden border-none bg-gradient-to-br from-card to-card/50 ring-1 ring-border/50 transition-all hover:ring-primary/30">
+        <CardContent className="flex flex-col gap-3 pt-2">
+          <div class="flex size-12 items-center justify-center rounded-xl bg-destructive/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-destructive" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          </div>
+          <div class="font-display text-4xl font-bold tracking-tight text-foreground md:text-5xl">90%</div>
+          <div class="text-sm text-muted-foreground">
+            Of coatings rely on toxic biocides or PFAS facing increasing regulatory pressure
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+</section>

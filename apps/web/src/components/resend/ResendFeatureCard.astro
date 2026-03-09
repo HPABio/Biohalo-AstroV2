@@ -1,0 +1,24 @@
+---
+/**
+ * Resend-style feature card (e.g. "Real-time previews", "Type-safe schemas").
+ * Title, description, optional slot for visual/code snippet.
+ */
+import { Card, CardContent, CardHeader } from "@workspace/ui/components/card"
+
+interface Props {
+  title: string
+  description: string
+}
+
+const { title, description } = Astro.props
+---
+
+<Card class="border-white/10 bg-card/50" data-figma-node="resend-feature-card">
+  <CardHeader>
+    <h3 class="font-display text-xl font-semibold tracking-tight text-foreground">{title}</h3>
+  </CardHeader>
+  <CardContent class="space-y-4">
+    <p class="text-muted-foreground">{description}</p>
+    <slot />
+  </CardContent>
+</Card>

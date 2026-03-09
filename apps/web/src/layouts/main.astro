@@ -1,15 +1,27 @@
 ---
 import "@workspace/ui/globals.css"
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+const {
+  title = "BioHalo — Biofluorination for a Cleaner Ocean",
+  description = "BioHalo develops biotechnologically produced mono-fluorinated compounds as sustainable, non-biocidal antifouling ingredients for marine coatings.",
+} = Astro.props
 ---
 
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a1628" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Astro App</title>
+    <title>{title}</title>
   </head>
-  <body>
+  <body class="min-h-svh antialiased">
     <slot />
   </body>
 </html>

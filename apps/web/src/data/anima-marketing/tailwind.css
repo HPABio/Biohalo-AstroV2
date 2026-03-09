@@ -1,0 +1,147 @@
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"inter","weight":"100 900","allowsCrossOrigin":false}] */
+  font-family: 'inter';
+  src: url("../media/inter_variable.p.53d7b668.woff2") format("woff2");
+  font-weight: 100 900;
+  
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"aBCFavorit","weight":"400","style":"normal","allowsCrossOrigin":false}] */
+  font-family: 'aBCFavorit';
+  src: url("../media/abc_favorit_book.p.1d99457f.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"aBCFavorit","weight":"500","style":"normal","allowsCrossOrigin":false}] */
+  font-family: 'aBCFavorit';
+  src: url("../media/abc_favorit_medium.p.c10ee984.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"domaine","weight":"400","style":"normal","allowsCrossOrigin":false}] */
+  font-family: 'domaine';
+  src: url("../media/domaine_regular.p.1d0bc589.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"domaine","weight":"500","style":"normal","allowsCrossOrigin":false}] */
+  font-family: 'domaine';
+  src: url("../media/domaine_medium.p.51bd4aaa.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"domaine","weight":"700","style":"normal","allowsCrossOrigin":false}] */
+  font-family: 'domaine';
+  src: url("../media/domaine_bold.p.41ffd769.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"commitMono","weight":"400","style":"normal","allowsCrossOrigin":false}] */
+  font-family: 'commitMono';
+  src: url("../media/commit_mono_regular.p.efa52ec0.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  /* @FONTWARNING[{"type":"restricted","family":"commitMono","weight":"400","style":"italic","allowsCrossOrigin":false}] */
+  font-family: 'commitMono';
+  src: url("../media/commit_mono_italic.p.c67ad415.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@tailwind base;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
