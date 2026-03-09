@@ -133,7 +133,7 @@
 /* Gradient highlight for title words (brand teal #79CBC3 → #1D5566) */
 .title-gradient {
     @apply inline leading-[0] bg-clip-text text-transparent font-bold;
-    background-image: linear-gradient(to bottom right, #79CBC3, #1D5566);
+    background-image: linear-gradient(to bottom right, rgb(121, 203, 195), #1D5566);
 }
 
 @layer base {

@@ -1,15 +1,33 @@
 ---
 import { Badge } from "@workspace/ui/components/badge"
 import { Card, CardContent } from "@workspace/ui/components/card"
+import LightRays from "./LightRays"
 ---
 
-<section class="relative py-16 md:py-24">
+<section class="relative overflow-hidden py-16 md:py-24">
+  <!-- Light rays background -->
+  <div class="pointer-events-none absolute inset-0 z-0">
+    <LightRays
+      client:visible
+      raysOrigin="top-center"
+      raysColor="#a8e8e0"
+      raysSpeed={0.6}
+      lightSpread={1.2}
+      rayLength={1.5}
+      pulsating={false}
+      fadeDistance={0.8}
+      saturation={0.9}
+      followMouse={true}
+      mouseInfluence={0.08}
+      className="opacity-30"
+    />
+  </div>
   <div
-    class="pointer-events-none absolute inset-0"
+    class="pointer-events-none absolute inset-0 z-[1]"
     style="background: radial-gradient(ellipse 50% 50% at 80% 50%, oklch(0.5 0 0 / 0.04) 0%, transparent 70%);"
   ></div>
 
-  <div class="relative mx-auto max-w-screen-xl px-6">
+  <div class="relative z-10 mx-auto max-w-screen-xl px-6">
     <div class="mb-8 md:mb-16">
       <Badge variant="outline" className="mb-4">Market</Badge>
       <h2 class="max-w-3xl font-display text-3xl font-normal tracking-tight text-foreground md:text-5xl">

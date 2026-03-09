@@ -1,0 +1,292 @@
+---
+import { Badge } from "@workspace/ui/components/badge"
+
+function dotGrid(opacity = 0.08): string {
+  let circles = ""
+  for (let row = 0; row < 7; row++) {
+    for (let col = 0; col < 8; col++) {
+      circles += `<circle cx="${10 + col * 52}" cy="${10 + row * 38}" r="0.8" fill="rgba(121, 203, 195,${opacity})"/>`
+    }
+  }
+  return circles
+}
+
+const illustrations: Record<string, string> = {
+  feedstock: `<svg viewBox="0 0 380 260" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">
+    ${dotGrid(0.08)}
+    <g transform="translate(30, 50)">
+      <path d="M60 140 Q20 100 30 50 Q60 10 100 30 Q140 50 130 100 Q120 140 60 140 Z" fill="rgba(121, 203, 195,0.06)" stroke="rgba(121, 203, 195,0.35)" stroke-width="1.2"/>
+      <path d="M60 140 Q80 90 100 30" stroke="rgba(121, 203, 195,0.25)" stroke-width="1" stroke-dasharray="4,3"/>
+      <path d="M60 140 Q40 100 45 65" stroke="rgba(121, 203, 195,0.15)" stroke-width="0.8" stroke-dasharray="3,3"/>
+      <path d="M60 140 Q90 110 115 75" stroke="rgba(121, 203, 195,0.15)" stroke-width="0.8" stroke-dasharray="3,3"/>
+      <ellipse cx="60" cy="140" rx="20" ry="6" fill="rgba(121, 203, 195,0.12)"/>
+    </g>
+    <g transform="translate(195, 60)">
+      <rect x="20" y="30" width="80" height="100" rx="8" fill="rgba(3,18,12,0.9)" stroke="rgba(121, 203, 195,0.35)" stroke-width="1.2"/>
+      <ellipse cx="60" cy="30" rx="40" ry="10" fill="rgba(3,18,12,0.95)" stroke="rgba(121, 203, 195,0.45)" stroke-width="1.2"/>
+      <line x1="20" y1="60" x2="100" y2="60" stroke="rgba(121, 203, 195,0.25)" stroke-width="1"/>
+      <line x1="20" y1="90" x2="100" y2="90" stroke="rgba(121, 203, 195,0.25)" stroke-width="1"/>
+      <rect x="32" y="100" width="56" height="3" rx="1.5" fill="rgba(121, 203, 195,0.2)"/>
+      <rect x="36" y="108" width="48" height="3" rx="1.5" fill="rgba(121, 203, 195,0.12)"/>
+      <ellipse cx="60" cy="90" rx="36" ry="8" fill="rgba(121, 203, 195,0.07)"/>
+      <circle cx="60" cy="68" r="10" fill="none" stroke="rgba(121, 203, 195,0.4)" stroke-width="1"/>
+      <text x="60" y="73" text-anchor="middle" fill="rgba(121, 203, 195,0.7)" font-size="11" font-family="monospace" font-weight="600">C</text>
+    </g>
+    <line x1="170" y1="128" x2="198" y2="128" stroke="rgba(121, 203, 195,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
+    <polygon points="196,124 204,128 196,132" fill="rgba(121, 203, 195,0.4)"/>
+    <circle cx="100" cy="200" r="3" fill="rgba(121, 203, 195,0.2)" stroke="rgba(121, 203, 195,0.4)" stroke-width="0.8"/>
+    <circle cx="140" cy="210" r="3" fill="rgba(121, 203, 195,0.2)" stroke="rgba(121, 203, 195,0.4)" stroke-width="0.8"/>
+    <circle cx="165" cy="195" r="3" fill="rgba(121, 203, 195,0.2)" stroke="rgba(121, 203, 195,0.4)" stroke-width="0.8"/>
+    <circle cx="120" cy="225" r="3" fill="rgba(121, 203, 195,0.2)" stroke="rgba(121, 203, 195,0.4)" stroke-width="0.8"/>
+    <text x="100" y="245" fill="rgba(121, 203, 195,0.35)" font-size="9" font-family="monospace">CH₂ · CO₂ · H₂O</text>
+  </svg>`,
+
+  microbes: `<svg viewBox="0 0 380 260" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">
+    ${dotGrid(0.07)}
+    <ellipse cx="190" cy="130" rx="62" ry="50" fill="rgba(121, 203, 195,0.06)" stroke="rgba(121, 203, 195,0.5)" stroke-width="1.4"/>
+    <ellipse cx="190" cy="130" rx="55" ry="43" fill="none" stroke="rgba(121, 203, 195,0.2)" stroke-width="0.8" stroke-dasharray="3,4"/>
+    <ellipse cx="190" cy="125" rx="22" ry="18" fill="rgba(121, 203, 195,0.1)" stroke="rgba(121, 203, 195,0.45)" stroke-width="1.1"/>
+    <path d="M178 120 Q184 115 190 120 Q196 125 202 120" stroke="rgba(121, 203, 195,0.6)" stroke-width="1" fill="none"/>
+    <path d="M178 126 Q184 121 190 126 Q196 131 202 126" stroke="rgba(121, 203, 195,0.4)" stroke-width="1" fill="none"/>
+    <ellipse cx="162" cy="145" rx="10" ry="6" fill="rgba(121, 203, 195,0.1)" stroke="rgba(121, 203, 195,0.3)" stroke-width="0.8"/>
+    <ellipse cx="218" cy="140" rx="8" ry="5" fill="rgba(121, 203, 195,0.1)" stroke="rgba(121, 203, 195,0.3)" stroke-width="0.8"/>
+    <ellipse cx="185" cy="155" rx="9" ry="5" fill="rgba(121, 203, 195,0.08)" stroke="rgba(121, 203, 195,0.25)" stroke-width="0.8"/>
+    <path d="M252 115 Q270 100 265 85 Q260 70 278 65" stroke="rgba(121, 203, 195,0.3)" stroke-width="1" fill="none"/>
+    <path d="M252 145 Q272 150 268 168 Q264 186 280 190" stroke="rgba(121, 203, 195,0.2)" stroke-width="1" fill="none"/>
+    <ellipse cx="90" cy="90" rx="28" ry="22" fill="rgba(121, 203, 195,0.04)" stroke="rgba(121, 203, 195,0.3)" stroke-width="1"/>
+    <ellipse cx="90" cy="87" rx="10" ry="8" fill="rgba(121, 203, 195,0.08)" stroke="rgba(121, 203, 195,0.35)" stroke-width="0.9"/>
+    <path d="M70 85 Q62 75 58 60" stroke="rgba(121, 203, 195,0.2)" stroke-width="0.9" fill="none"/>
+    <ellipse cx="100" cy="195" rx="24" ry="18" fill="rgba(121, 203, 195,0.04)" stroke="rgba(121, 203, 195,0.25)" stroke-width="1"/>
+    <ellipse cx="100" cy="193" rx="9" ry="7" fill="rgba(121, 203, 195,0.07)" stroke="rgba(121, 203, 195,0.3)" stroke-width="0.8"/>
+    <circle cx="300" cy="90" r="16" fill="rgba(121, 203, 195,0.12)" stroke="rgba(121, 203, 195,0.6)" stroke-width="1.2"/>
+    <text x="300" y="96" text-anchor="middle" fill="rgba(121, 203, 195,0.95)" font-size="14" font-family="monospace" font-weight="700">F</text>
+    <text x="300" y="116" text-anchor="middle" fill="rgba(121, 203, 195,0.4)" font-size="8" font-family="monospace">fluorine</text>
+    <ellipse cx="190" cy="178" rx="50" ry="8" fill="rgba(121, 203, 195,0.08)"/>
+  </svg>`,
+
+  biofluorination: `<svg viewBox="0 0 380 260" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">
+    ${dotGrid(0.07)}
+    <g transform="translate(130, 50)">
+      <path d="M60 0 L120 30 L120 90 L60 120 L0 90 L0 30 Z" fill="rgba(121, 203, 195,0.06)" stroke="rgba(121, 203, 195,0.45)" stroke-width="1.3"/>
+      <path d="M60 18 L102 40 L102 80 L60 102 L18 80 L18 40 Z" fill="none" stroke="rgba(121, 203, 195,0.18)" stroke-width="0.8" stroke-dasharray="3,3"/>
+      <text x="60" y="56" text-anchor="middle" fill="rgba(121, 203, 195,0.5)" font-size="9" font-family="monospace">C–H</text>
+      <path d="M48 62 L72 62" stroke="rgba(121, 203, 195,0.5)" stroke-width="1"/>
+      <text x="60" y="78" text-anchor="middle" fill="rgba(121, 203, 195,0.9)" font-size="9" font-family="monospace">C–F</text>
+      <text x="60" y="96" text-anchor="middle" fill="rgba(121, 203, 195,0.35)" font-size="8" font-family="monospace">25°C</text>
+    </g>
+    <g transform="translate(22, 95)">
+      <circle cx="30" cy="40" r="18" fill="rgba(121, 203, 195,0.05)" stroke="rgba(121, 203, 195,0.3)" stroke-width="1"/>
+      <circle cx="18" cy="28" r="8" fill="none" stroke="rgba(121, 203, 195,0.25)" stroke-width="0.9"/>
+      <circle cx="42" cy="28" r="8" fill="none" stroke="rgba(121, 203, 195,0.25)" stroke-width="0.9"/>
+      <circle cx="30" cy="52" r="8" fill="none" stroke="rgba(121, 203, 195,0.25)" stroke-width="0.9"/>
+      <text x="18" y="32" text-anchor="middle" fill="rgba(121, 203, 195,0.45)" font-size="7" font-family="monospace">C</text>
+      <text x="42" y="32" text-anchor="middle" fill="rgba(121, 203, 195,0.45)" font-size="7" font-family="monospace">H</text>
+      <text x="30" y="56" text-anchor="middle" fill="rgba(121, 203, 195,0.45)" font-size="7" font-family="monospace">O</text>
+    </g>
+    <line x1="80" y1="135" x2="130" y2="115" stroke="rgba(121, 203, 195,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
+    <g transform="translate(278, 95)">
+      <circle cx="30" cy="40" r="18" fill="rgba(121, 203, 195,0.1)" stroke="rgba(121, 203, 195,0.55)" stroke-width="1.2"/>
+      <circle cx="18" cy="28" r="8" fill="none" stroke="rgba(121, 203, 195,0.4)" stroke-width="0.9"/>
+      <circle cx="42" cy="28" r="10" fill="rgba(121, 203, 195,0.15)" stroke="rgba(121, 203, 195,0.7)" stroke-width="1.1"/>
+      <circle cx="30" cy="52" r="8" fill="none" stroke="rgba(121, 203, 195,0.25)" stroke-width="0.9"/>
+      <text x="18" y="32" text-anchor="middle" fill="rgba(121, 203, 195,0.5)" font-size="7" font-family="monospace">C</text>
+      <text x="42" y="32" text-anchor="middle" fill="rgba(121, 203, 195,1)" font-size="8" font-family="monospace" font-weight="700">F</text>
+      <text x="30" y="56" text-anchor="middle" fill="rgba(121, 203, 195,0.45)" font-size="7" font-family="monospace">O</text>
+    </g>
+    <line x1="252" y1="115" x2="280" y2="133" stroke="rgba(121, 203, 195,0.3)" stroke-width="1" stroke-dasharray="4,3"/>
+    <rect x="148" y="188" width="84" height="22" rx="11" fill="rgba(121, 203, 195,0.08)" stroke="rgba(121, 203, 195,0.3)" stroke-width="1"/>
+    <text x="190" y="204" text-anchor="middle" fill="rgba(121, 203, 195,0.7)" font-size="9" font-family="monospace">low energy</text>
+    <ellipse cx="190" cy="175" rx="45" ry="7" fill="rgba(121, 203, 195,0.1)"/>
+  </svg>`,
+
+  products: `<svg viewBox="0 0 380 260" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">
+    ${dotGrid(0.07)}
+    <g transform="translate(130, 30)">
+      <rect x="42" y="0" width="36" height="40" rx="4" fill="rgba(3,18,12,0.9)" stroke="rgba(121, 203, 195,0.4)" stroke-width="1.1"/>
+      <path d="M20 40 L100 40 L115 140 L5 140 Z" fill="rgba(121, 203, 195,0.07)" stroke="rgba(121, 203, 195,0.45)" stroke-width="1.2"/>
+      <path d="M12 100 Q60 90 108 100 L115 140 L5 140 Z" fill="rgba(121, 203, 195,0.15)"/>
+      <path d="M12 100 Q60 90 108 100" stroke="rgba(121, 203, 195,0.6)" stroke-width="1" fill="none"/>
+      <circle cx="40" cy="120" r="6" fill="none" stroke="rgba(121, 203, 195,0.5)" stroke-width="1"/>
+      <circle cx="80" cy="115" r="5" fill="none" stroke="rgba(121, 203, 195,0.4)" stroke-width="1"/>
+      <line x1="46" y1="120" x2="75" y2="115" stroke="rgba(121, 203, 195,0.3)" stroke-width="0.8"/>
+      <rect x="38" y="-8" width="44" height="12" rx="3" fill="rgba(121, 203, 195,0.2)" stroke="rgba(121, 203, 195,0.5)" stroke-width="1"/>
+      <rect x="22" y="55" width="76" height="26" rx="4" fill="rgba(3,18,12,0.8)" stroke="rgba(121, 203, 195,0.25)" stroke-width="0.8"/>
+      <text x="60" y="67" text-anchor="middle" fill="rgba(121, 203, 195,0.8)" font-size="9" font-family="monospace">2-FMA</text>
+      <text x="60" y="78" text-anchor="middle" fill="rgba(121, 203, 195,0.45)" font-size="8" font-family="monospace">high-purity</text>
+    </g>
+    <g transform="translate(265, 80)">
+      <rect x="10" y="20" width="26" height="70" rx="5" fill="rgba(121, 203, 195,0.05)" stroke="rgba(121, 203, 195,0.3)" stroke-width="1"/>
+      <path d="M10 60 L36 60 L38 90 L8 90 Z" fill="rgba(121, 203, 195,0.1)"/>
+      <rect x="8" y="14" width="30" height="10" rx="3" fill="rgba(121, 203, 195,0.15)" stroke="rgba(121, 203, 195,0.4)" stroke-width="0.8"/>
+      <rect x="14" y="65" width="18" height="2.5" rx="1.25" fill="rgba(121, 203, 195,0.3)"/>
+      <rect x="14" y="71" width="12" height="2.5" rx="1.25" fill="rgba(121, 203, 195,0.2)"/>
+    </g>
+    <g transform="translate(298, 95)">
+      <rect x="10" y="20" width="24" height="60" rx="5" fill="rgba(121, 203, 195,0.04)" stroke="rgba(121, 203, 195,0.22)" stroke-width="1"/>
+      <path d="M10 55 L34 55 L36 80 L8 80 Z" fill="rgba(121, 203, 195,0.07)"/>
+      <rect x="8" y="14" width="28" height="9" rx="3" fill="rgba(121, 203, 195,0.1)" stroke="rgba(121, 203, 195,0.3)" stroke-width="0.8"/>
+    </g>
+    <g transform="translate(30, 150)">
+      <rect x="0" y="0" width="90" height="50" rx="6" fill="rgba(3,18,12,0.8)" stroke="rgba(121, 203, 195,0.25)" stroke-width="1"/>
+      <rect x="8" y="8" width="74" height="8" rx="2" fill="rgba(121, 203, 195,0.2)" stroke="rgba(121, 203, 195,0.4)" stroke-width="0.8"/>
+      <rect x="8" y="20" width="74" height="6" rx="2" fill="rgba(121, 203, 195,0.1)" stroke="rgba(121, 203, 195,0.25)" stroke-width="0.8"/>
+      <rect x="8" y="30" width="74" height="4" rx="2" fill="rgba(121, 203, 195,0.06)" stroke="rgba(121, 203, 195,0.2)" stroke-width="0.8"/>
+      <text x="45" y="47" text-anchor="middle" fill="rgba(121, 203, 195,0.4)" font-size="8" font-family="monospace">coating layer</text>
+    </g>
+    <line x1="138" y1="195" x2="124" y2="200" stroke="rgba(121, 203, 195,0.25)" stroke-width="1" stroke-dasharray="3,3"/>
+    <ellipse cx="190" cy="185" rx="50" ry="7" fill="rgba(121, 203, 195,0.08)"/>
+  </svg>`,
+}
+
+const cards = [
+  {
+    step: "01",
+    badge: "Feedstock",
+    title: "Renewable carbon at the source",
+    description: "Renewable or waste-derived carbon sources serve as the starting material for our bioprocess.",
+    bullets: ["Agricultural & industrial waste streams", "CO₂-neutral carbon input", "Scalable feedstock supply"],
+    illustrationLeft: true,
+    illustration: "feedstock",
+  },
+  {
+    step: "02",
+    badge: "Engineered Microbes",
+    title: "Precision-engineered strains",
+    description: "Proprietary microbial strains with optimized metabolic pathways perform controlled fluorination.",
+    bullets: ["Optimized metabolic pathway design", "Proprietary strain library", "Stable across fermentation cycles"],
+    illustrationLeft: false,
+    illustration: "microbes",
+  },
+  {
+    step: "03",
+    badge: "Biofluorination",
+    title: "Enzymatic C–F bond formation",
+    description: "Enzymatic mono-fluorination at ambient conditions — low energy, minimal by-products.",
+    bullets: ["Ambient temperature fermentation", "Selective mono-fluorination", "Minimal chemical by-products"],
+    illustrationLeft: true,
+    illustration: "biofluorination",
+  },
+  {
+    step: "04",
+    badge: "Products",
+    title: "High-purity fluorinated compounds",
+    description: "High-purity 2-FMA and related compounds ready for integration into coating formulations.",
+    bullets: ["2-FMA and derivative compounds", "Ready for coating integration", "Consistent batch quality"],
+    illustrationLeft: false,
+    illustration: "products",
+  },
+]
+
+const stats = [
+  { label: "Low Energy Demand", value: "Ambient fermentation" },
+  { label: "GHG Reduction", value: ">50% vs traditional" },
+  { label: "Feedstock", value: "Renewable / waste" },
+  { label: "By-products", value: "Minimal" },
+]
+---
+
+<section id="benefits" class="relative py-16 md:py-24">
+  <div
+    class="pointer-events-none absolute inset-0"
+    style="background: radial-gradient(ellipse 50% 40% at 50% 60%, oklch(0.5 0.1 185 / 0.04) 0%, transparent 70%);"
+  ></div>
+
+  <div class="relative mx-auto max-w-screen-xl px-6">
+    <!-- Section header -->
+    <div class="mb-10 md:mb-16">
+      <Badge variant="outline" className="mb-4">Technology</Badge>
+      <h2 class="max-w-2xl font-display text-3xl font-normal tracking-tight text-foreground md:text-5xl">
+        Microbial <span class="title-gradient">Biofluorination</span>
+      </h2>
+      <p class="mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
+        A breakthrough platform that uses microorganisms to perform controlled
+        mono-fluorination — producing compounds previously impossible to synthesize.
+      </p>
+    </div>
+
+    <!-- Process cards -->
+    <div class="flex flex-col">
+      {cards.map((card, i) => (
+        <>
+          <div class:list={[
+            "flex flex-col overflow-hidden rounded-2xl ",
+            card.illustrationLeft ? "md:flex-row" : "md:flex-row-reverse",
+          ]}>
+            <!-- Illustration panel -->
+            <div class="illustration-panel relative flex items-center justify-center overflow-hidden p-4 md:w-[52%]">
+              <div
+                class="pointer-events-none absolute inset-0"
+                style={`background: radial-gradient(ellipse at ${card.illustrationLeft ? "60%" : "40%"} 50%, oklch(0.75 0.15 185 / 0.06) 0%, transparent 65%);`}
+              ></div>
+              <div class="relative w-full max-w-[380px]">
+                <Fragment set:html={illustrations[card.illustration]} />
+              </div>
+            </div>
+
+            <!-- Content panel -->
+            <div class="flex flex-1 flex-col justify-center gap-5 p-8 md:px-10 md:py-11 lg:px-12">
+              <div class="flex items-center gap-2.5">
+                <span class="font-mono text-xs tracking-wider text-primary/45">{card.step}</span>
+                <Badge variant="outline">{card.badge}</Badge>
+              </div>
+
+              <h3 class="font-display text-2xl font-semibold tracking-tight text-foreground md:text-[clamp(1.5rem,2.4vw,2.125rem)]">
+                {card.title}
+              </h3>
+
+              <p class="max-w-sm text-sm leading-relaxed text-muted-foreground">
+                {card.description}
+              </p>
+
+              {card.bullets && (
+                <ul class="mt-1 flex flex-col gap-3">
+                  {card.bullets.map((b) => (
+                    <li class="flex items-center gap-3">
+                      <span class="flex size-[22px] shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                        <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+                          <path d="M1.5 6L4.5 9.5L10.5 2.5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </span>
+                      <span class="text-sm text-foreground/70">{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+
+          <!-- Connector line between cards -->
+          {i < cards.length - 1 && (
+            <div class="mx-auto hidden w-3/4 md:block">
+              <svg width="100%" height="56" viewBox="0 0 1100 56" preserveAspectRatio="none" fill="none">
+                {card.illustrationLeft
+                  ? <path d="M1100 0 Q1100 28 1060 28 L40 28 Q0 28 0 56" stroke="oklch(0.75 0.15 185 / 0.22)" stroke-width="1" stroke-dasharray="6,5" fill="none" vector-effect="non-scaling-stroke"/>
+                  : <path d="M0 0 Q0 28 40 28 L1060 28 Q1100 28 1100 56" stroke="oklch(0.75 0.15 185 / 0.22)" stroke-width="1" stroke-dasharray="6,5" fill="none" vector-effect="non-scaling-stroke"/>
+                }
+              </svg>
+            </div>
+          )}
+        </>
+      ))}
+    </div>
+
+    <!-- Stats bar -->
+    <div class="mt-12 grid gap-px overflow-hidden rounded-2xl ring-1 ring-border/50 sm:grid-cols-2 md:grid-cols-4">
+      {stats.map((s, i) => (
+        <div class:list={[
+          "flex flex-col gap-2 bg-card/30 p-6 md:p-7",
+          i < stats.length - 1 && "border-b border-border/30 md:border-r md:border-b-0",
+        ]}>
+          <span class="text-xs font-medium uppercase tracking-wider text-muted-foreground">{s.label}</span>
+          <span class="font-display text-lg font-semibold text-primary">{s.value}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .illustration-panel {
+    background: oklch(0.10 0.02 185 / 0.97);
+  }
+</style>
