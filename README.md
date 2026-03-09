@@ -1,6 +1,6 @@
-# Astro + React + TypeScript + shadcn/ui (Monorepo)
+# Astro + React + TypeScript + Tailwind CSS + shadcn/ui (Monorepo)
 
-This is a monorepo template for Astro with React, TypeScript, and shadcn/ui.
+This is a monorepo template for Astro with React, TypeScript, Tailwind CSS, and shadcn/ui.
 
 ## Structure
 
