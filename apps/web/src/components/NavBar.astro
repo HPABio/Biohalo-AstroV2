@@ -1,6 +1,7 @@
 ---
 import { Button } from "@workspace/ui/components/button"
 import { MobileNav } from "./MobileNav"
+import logo from "../assets/images/BioHaloLogo.png"
 
 const links = [
   { href: "#problem", label: "Problem" },
@@ -17,10 +18,14 @@ const links = [
 >
   <div class="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-4">
     <a href="/" class="flex items-center gap-2">
-      <div class="flex size-9 items-center justify-center rounded-lg bg-primary">
-        <span class="font-display text-lg font-bold text-primary-foreground">B</span>
-      </div>
-      <span class="font-display text-xl font-semibold tracking-tight text-foreground">BioHalo</span>
+      <img
+        src={logo.src}
+        alt="BioHalo"
+        width={logo.width}
+        height={logo.height}
+        class="h-9 w-auto"
+        fetchpriority="high"
+      />
     </a>
 
     <nav class="hidden items-center gap-1 md:flex">

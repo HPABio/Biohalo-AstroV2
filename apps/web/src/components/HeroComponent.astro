@@ -1,0 +1,38 @@
+---
+// import ColorBends from "./ColorBends.tsx";
+import Hero from "./Hero.astro";
+---
+
+<section>
+	<div class="relative h-[1000px] w-screen bg-black">
+		<!-- <ColorBends
+			client:load
+			className="absolute top-0 left-0 w-full h-full"
+			colors={["#0f172a", "#064e3b", "#4ade80"]}
+			rotation={0}
+			speed={0.2}
+			scale={1}
+			frequency={1.05 /* Good values are 1.02, 1.03, 1.04 */}
+			warpStrength={1 /* Good values are 1, 1.1, 1.2 */}
+			mouseInfluence={0.35}
+			parallax={0}
+			noise={0.1}
+			transparent={true}
+		/> -->
+
+		<!-- Background Gradient to top -->
+		<div
+			class="absolute bottom-0 left-0 h-[50vh] w-screen overflow-hidden bg-linear-to-t from-black to-transparent"
+		>
+		</div>
+	</div>
+
+	<!-- Hero Section with backdrop blur -->
+	<div
+		class="absolute top-0 left-0 h-[1000px] w-screen overflow-hidden bg-black/30 backdrop-blur-lg flex items-start justify-center"
+	>
+		<div class="absolute top-0 left-0 h-[800px] w-screen overflow-hidden flex items-center justify-center">
+			<Hero />
+		</div>
+	</div>
+</section>
