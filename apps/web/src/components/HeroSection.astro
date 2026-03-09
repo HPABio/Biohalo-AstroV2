@@ -3,16 +3,16 @@ import { Button } from "@workspace/ui/components/button"
 ---
 
 <section class="relative flex min-h-svh items-center justify-center overflow-hidden">
-  <!-- Radial glow -->
+  <!-- Radial glow (neutral, no blue tint) -->
   <div
     class="pointer-events-none absolute inset-0"
-    style="background: radial-gradient(ellipse 60% 50% at 50% 40%, oklch(0.75 0.15 185 / 0.15) 0%, transparent 70%);"
+    style="background: radial-gradient(ellipse 60% 50% at 50% 40%, oklch(0.5 0 0 / 0.08) 0%, transparent 70%);"
   ></div>
 
   <!-- Secondary glow -->
   <div
     class="pointer-events-none absolute inset-0"
-    style="background: radial-gradient(circle at 30% 70%, oklch(0.55 0.10 220 / 0.08) 0%, transparent 50%);"
+    style="background: radial-gradient(circle at 30% 70%, oklch(0.45 0 0 / 0.05) 0%, transparent 50%);"
   ></div>
 
   <!-- Noise texture -->
@@ -21,10 +21,10 @@ import { Button } from "@workspace/ui/components/button"
     style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E'); background-repeat: repeat; background-size: 256px 256px;"
   ></div>
 
-  <!-- Grid lines -->
+  <!-- Grid lines (neutral) -->
   <div
     class="pointer-events-none absolute inset-0 opacity-[0.04]"
-    style="background-image: linear-gradient(oklch(0.75 0.15 185 / 0.3) 1px, transparent 1px), linear-gradient(90deg, oklch(0.75 0.15 185 / 0.3) 1px, transparent 1px); background-size: 80px 80px;"
+    style="background-image: linear-gradient(oklch(0.5 0 0 / 0.25) 1px, transparent 1px), linear-gradient(90deg, oklch(0.5 0 0 / 0.25) 1px, transparent 1px); background-size: 80px 80px;"
   ></div>
 
   <div class="relative z-10 mx-auto max-w-screen-lg px-6 pt-24 pb-16 text-center md:pt-0">
