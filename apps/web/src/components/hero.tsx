@@ -17,8 +17,8 @@ export default function Hero() {
         >
           <a href="#" className="flex items-center gap-2">
             <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-d-full mt-0.5 h-2 w-2 bg-green-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+              <span className="relative rounded-full mt-0.5 h-2 w-2 bg-teal-500"></span>
             </span>
             Currently Raising Funds
             <ArrowUpRight className="ml-1 size-4" />
@@ -26,8 +26,8 @@ d-full mt-0.5 h-2 w-2 bg-green-500"></span>
         </Badge>
         
         <div className="flex items-center justify-center -mt-2 mb-6">
-          <Image
-            src={BioHaloLogoSVG}
+          <img
+            src={typeof BioHaloLogoSVG === 'string' ? BioHaloLogoSVG : BioHaloLogoSVG.src}
             alt="BioHalo Logo"
             className="max-w-[600px] w-full h-auto object-contain"
             width={680}
@@ -69,7 +69,7 @@ d-full mt-0.5 h-2 w-2 bg-green-500"></span>
           </Button>
           <Button
             size="lg"
-            className="rounded-full text-base font-black shadow-none bg-[#2DFD75] text-black"
+            className="rounded-full text-base font-black shadow-none bg-teal-400 text-black hover:bg-teal-300"
           >
             <CirclePlay className="size-5" /> Watch Demo
           </Button>
