@@ -5,14 +5,16 @@ import Hero from "./Hero.astro"
 import LightRaysComponent from "./LightRays"
 ---
 
-<section class="relative flex min-h-svh items-center justify-center overflow-hidden">
+<section
+  class="relative flex min-h-svh items-center justify-center overflow-hidden"
+>
   <!-- Background layers (rotated 180deg) -->
   <div class="absolute inset-0 -z-20 rotate-0">
     <!-- Base background (BG rays) -->
     <div class="absolute inset-0">
       <img
         src="https://framerusercontent.com/images/jDstuQwhf2SzTvmqF9d4STgqd5E.svg"
-        class="h-full w-full object-fill object-center scale-150"
+        class="h-full w-full scale-150 object-fill object-center"
         alt=""
       />
     </div>
@@ -20,73 +22,88 @@ import LightRaysComponent from "./LightRays"
     <!-- Rays layer -->
     <LightRaysComponent
       client:visible
-      raysSpeed={2.1}
+      raysSpeed={1.7}
       raysColor="#a8e8e0"
       className="absolute inset-0 z-10 opacity-90"
     />
-    <div class="hidden pointer-events-none absolute inset-0">
-    <img
-      src="https://framerusercontent.com/images/ONh7sesUBq0eUuVYg864evt0i4g.svg"
-      class="absolute left-1/2 top-0 h-[1154px] w-[430px] -translate-x-1/2 -rotate-[31deg] object-cover"
-      alt=""
-    />
-    <img
-      src="https://framerusercontent.com/images/ONh7sesUBq0eUuVYg864evt0i4g.svg"
-      class="absolute left-[20%] top-0 h-[1154px] w-[430px] -rotate-[31deg] object-cover"
-      alt=""
-    />
-    <img
-      src="https://framerusercontent.com/images/ONh7sesUBq0eUuVYg864evt0i4g.svg"
-      class="absolute right-[20%] top-0 h-[1154px] w-[430px] -rotate-[31deg] object-cover"
-      alt=""
-    />
-  </div>
+    <div class="pointer-events-none absolute inset-0 hidden">
+      <img
+        src="https://framerusercontent.com/images/ONh7sesUBq0eUuVYg864evt0i4g.svg"
+        class="absolute top-0 left-1/2 h-[1154px] w-[430px] -translate-x-1/2 -rotate-[31deg] object-cover"
+        alt=""
+      />
+      <img
+        src="https://framerusercontent.com/images/ONh7sesUBq0eUuVYg864evt0i4g.svg"
+        class="absolute top-0 left-[20%] h-[1154px] w-[430px] -rotate-[31deg] object-cover"
+        alt=""
+      />
+      <img
+        src="https://framerusercontent.com/images/ONh7sesUBq0eUuVYg864evt0i4g.svg"
+        class="absolute top-0 right-[20%] h-[1154px] w-[430px] -rotate-[31deg] object-cover"
+        alt=""
+      />
+    </div>
 
-  <!-- Radial glow (neutral, no blue tint) -->
-  <div
-    class="pointer-events-none absolute inset-0"
-    style="background: radial-gradient(ellipse 60% 50% at 50% 40%, oklch(0.5 0 0 / 0.08) 0%, transparent 70%);"
-  ></div>
+    <!-- Radial glow (neutral, no blue tint) -->
+    <div
+      class="pointer-events-none absolute inset-0"
+      style="background: radial-gradient(ellipse 60% 50% at 50% 40%, oklch(0.5 0 0 / 0.08) 0%, transparent 70%);"
+    >
+    </div>
 
-  <!-- Secondary glow -->
-  <div
-    class="pointer-events-none absolute inset-0"
-    style="background: radial-gradient(circle at 30% 70%, oklch(0.45 0 0 / 0.05) 0%, transparent 50%);"
-  ></div>
+    <!-- Secondary glow -->
+    <div
+      class="pointer-events-none absolute inset-0"
+      style="background: radial-gradient(circle at 30% 70%, oklch(0.45 0 0 / 0.05) 0%, transparent 50%);"
+    >
+    </div>
 
-  <!-- Noise texture -->
-  <div
-    class="pointer-events-none absolute inset-0 opacity-[0.03]"
-    style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E'); background-repeat: repeat; background-size: 256px 256px;"
-  ></div>
+    <!-- Noise texture -->
+    <div
+      class="pointer-events-none absolute inset-0 opacity-[0.03]"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 256 256%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%224%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E'); background-repeat: repeat; background-size: 256px 256px;"
+    >
+    </div>
 
     <!-- Grid lines (neutral) -->
     <div
       class="pointer-events-none absolute inset-0 opacity-[0.04]"
       style="background-image: linear-gradient(oklch(0.5 0 0 / 0.25) 1px, transparent 1px), linear-gradient(90deg, oklch(0.5 0 0 / 0.25) 1px, transparent 1px); background-size: 80px 80px;"
-    ></div>
+    >
+    </div>
   </div>
 
-
   <Hero />
-  <div class="hidden relative z-10 mx-auto max-w-screen-lg px-6 pt-24 pb-16 text-center md:pt-0">
-    <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5">
+  <div
+    class="relative z-10 mx-auto hidden max-w-screen-lg px-6 pt-24 pb-16 text-center md:pt-0"
+  >
+    <div
+      class="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5"
+    >
       <span class="size-1.5 animate-pulse rounded-full bg-primary"></span>
-      <span class="text-xs font-medium tracking-wide text-primary">Pioneering Sustainable Marine Chemistry</span>
+      <span class="text-xs font-medium tracking-wide text-primary"
+        >Pioneering Sustainable Marine Chemistry</span
+      >
     </div>
 
-    <h1 class="mx-auto max-w-4xl font-display text-5xl font-normal leading-[1.1] tracking-[-0.02em] text-foreground md:text-7xl lg:text-8xl">
+    <h1
+      class="mx-auto max-w-4xl font-display text-5xl leading-[1.1] font-normal tracking-[-0.02em] text-foreground md:text-7xl lg:text-8xl"
+    >
       Biofluorination for a
       <span class="title-gradient">Cleaner Ocean</span>
     </h1>
 
-    <p class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg md:leading-relaxed">
+    <p
+      class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg md:leading-relaxed"
+    >
       Non-biocidal antifouling agents that deliver high performance without
       harming marine ecosystems. BioHalo uses microorganisms to create the next
       generation of sustainable marine coatings.
     </p>
 
-    <div class="mt-10 flex flex-col items-center justify-center gap-4 md:flex-row">
+    <div
+      class="mt-10 flex flex-col items-center justify-center gap-4 md:flex-row"
+    >
       <a href="#solution">
         <Button size="lg" className="h-12 px-8 text-base">
           Explore Our Solution
@@ -103,7 +120,10 @@ import LightRaysComponent from "./LightRays"
     <div class="mt-16 flex justify-center md:mt-24">
       <div class="flex flex-col items-center gap-2 text-muted-foreground/50">
         <span class="text-xs tracking-widest uppercase">Scroll</span>
-        <div class="h-8 w-px bg-gradient-to-b from-muted-foreground/50 to-transparent"></div>
+        <div
+          class="h-8 w-px bg-gradient-to-b from-muted-foreground/50 to-transparent"
+        >
+        </div>
       </div>
     </div>
   </div>

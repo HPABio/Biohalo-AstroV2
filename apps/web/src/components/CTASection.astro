@@ -9,29 +9,37 @@ import { FlickeringGrid } from "@workspace/ui/components/flickering-grid"
     class="pointer-events-none absolute inset-0"
     style="background: radial-gradient(ellipse 60% 60% at 50% 50%, oklch(0.5 0 0 / 0.05) 0%, transparent 70%);"
   >
-</div>
+  </div>
 
   <div class="relative mx-auto max-w-screen-lg px-6 text-center">
-    <div class="rounded-2xl border border-border/50 bg-gradient-to-b from-card to-background p-8 md:p-16">
+    <div
+      class="relative overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-b from-card to-background p-8 md:p-16"
+    >
       <FlickeringGrid
-      client:visible
-      className="absolute inset-0 z-10 [mask-image:radial-gradient(800px_circle_at_bottom_right,white,transparent)]"
-      squareSize={4}
-      gridGap={6}
-      color="#a8e8e0"
-      maxOpacity={0.45}
-      flickerChance={0.1}
-    />
-      <h2 class="font-display text-3xl font-normal tracking-tight text-foreground md:text-5xl">
+        client:visible
+        className="absolute inset-0 z-0 [mask-image:radial-gradient(600px_circle_at_bottom_right,white,transparent)]"
+        squareSize={4}
+        gridGap={6}
+        color="#a8e8e0"
+        maxOpacity={0.45}
+        flickerChance={0.1}
+      />
+      <h2
+        class="font-display text-3xl font-normal tracking-tight text-foreground md:text-5xl"
+      >
         Join Us in Building the Next Generation of
         <span class="title-gradient">Sustainable Coatings</span>
       </h2>
-      <p class="mx-auto mt-4 max-w-xl text-base text-muted-foreground md:text-lg">
+      <p
+        class="mx-auto mt-4 max-w-xl text-base text-muted-foreground md:text-lg"
+      >
         Whether you're a coating manufacturer, investor, or research partner,
         we'd love to explore how BioHalo can work for you.
       </p>
 
-      <div class="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
+      <div
+        class="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row"
+      >
         <a href="mailto:contact@biohalo.com">
           <Button size="lg" className="h-12 px-8 text-base">
             Get in Touch

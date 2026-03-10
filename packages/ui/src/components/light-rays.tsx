@@ -75,7 +75,7 @@ const Ray = ({
         duration: duration,
         repeat: Infinity,
         ease: "easeInOut",
-        delay: delay,
+        delay: 0.2,
         repeatDelay: duration * 0.1,
       }}
     />
