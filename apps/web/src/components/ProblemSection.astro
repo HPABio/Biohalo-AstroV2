@@ -44,19 +44,23 @@ import { Badge } from "@workspace/ui/components/badge"
     </div>
   </div>
 
+  <Badge
+    variant="section"
+    className="absolute top-0 left-1/2 mx-auto mb-6 -translate-x-1/2"
+    >The Challenge</Badge
+  >
   <div
     class="relative mx-auto flex max-w-screen-xl flex-col gap-12 px-6 lg:flex-row lg:items-center lg:gap-16"
   >
     <div class="flex-1">
-      <Badge variant="section" className="mb-6"
-        >The Challenge</Badge
-      >
       <h2
         class="font-display text-6xl leading-none font-black tracking-tight text-foreground md:text-[5.5rem] lg:text-[7rem]"
       >
         <!-- The <span class="title-gradient">Global Impact</span> of Biofouling</h2> -->
-        <span class="title-gradient">The</span> Global Impact of <span
-          class="title-gradient">Biofouling</span>
+        <span class="title-gradient">The</span> Global <span
+          class="title-gradient">Impact</span
+        > of Biofouling
+        <!-- The Global Impact of <span class="title-gradient">Biofouling</span> -->
       </h2>
       <p
         class="mt-6 max-w-xl text-base leading-snug text-muted-foreground md:text-lg lg:text-xl"
