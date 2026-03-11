@@ -14,7 +14,8 @@ const team = [
     role: "Co-founder & CSO",
     initials: "AD",
     image: albertoDeMaria,
-    credentials: "PhD in metabolic engineering. Expert in biosynthesis pathways.",
+    credentials:
+      "PhD in metabolic engineering. Expert in biosynthesis pathways.",
     linkedin: undefined as string | undefined,
     email: undefined as string | undefined,
   },
@@ -23,7 +24,8 @@ const team = [
     role: "Co-founder & CEO",
     initials: "JL",
     image: johannLiebeton,
-    credentials: "MSc BA & Bio-entrepreneurship. Experience in early-stage operations.",
+    credentials:
+      "MSc BA & Bio-entrepreneurship. Experience in early-stage operations.",
     linkedin: undefined as string | undefined,
     email: undefined as string | undefined,
   },
@@ -32,7 +34,8 @@ const team = [
     role: "Research Assistant",
     initials: "AV",
     image: arthurVancolen,
-    credentials: "MSc in Biotechnology. Molecular biology and fermentation expertise.",
+    credentials:
+      "MSc in Biotechnology. Molecular biology and fermentation expertise.",
     linkedin: undefined as string | undefined,
     email: undefined as string | undefined,
   },
@@ -41,7 +44,8 @@ const team = [
     role: "Co-founder & Scientific Advisor",
     initials: "PN",
     image: pabloNikel,
-    credentials: "Full Professor, h-index 51. Editor-in-Chief, Current Opinion in Biotechnology.",
+    credentials:
+      "Full Professor, h-index 51. Editor-in-Chief, Current Opinion in Biotechnology.",
     linkedin: undefined as string | undefined,
     email: undefined as string | undefined,
   },
@@ -50,7 +54,8 @@ const team = [
     role: "Co-founder & Fundraising Advisor",
     initials: "NK",
     image: nicoKrink,
-    credentials: "PhD in bioengineering. Venture capital experience and strong network.",
+    credentials:
+      "PhD in bioengineering. Venture capital experience and strong network.",
     linkedin: undefined as string | undefined,
     email: undefined as string | undefined,
   },
@@ -70,56 +75,75 @@ const team = [
   <div
     class="pointer-events-none absolute inset-0"
     style="background: radial-gradient(ellipse 40% 40% at 50% 30%, oklch(0.5 0 0 / 0.04) 0%, transparent 70%);"
-  ></div>
+  >
+  </div>
 
   <div class="relative mx-auto max-w-screen-xl px-6">
     <div class="mb-8 text-center md:mb-16">
-      <Badge className="bg-transparent text-foreground mb-4 border-[0.03125rem] border-solid border-slate-600">Team</Badge>
-      <h2 class="font-display text-3xl font-normal tracking-tight text-foreground md:text-5xl">
+      <Badge
+        className="mb-4 border-[0.03125rem] border-solid border-slate-600 bg-transparent text-foreground"
+        >Team</Badge
+      >
+      <h2
+        class="font-display text-3xl font-normal tracking-tight text-foreground md:text-5xl"
+      >
         <span class="title-gradient">Leadership</span> Team
       </h2>
-      <p class="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
+      <p
+        class="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg"
+      >
         A brain-gain company in Denmark with limitless global potential.
       </p>
     </div>
 
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {team.map((member) => (
-        <Card className="group border-none bg-gradient-to-br from-card to-card/50 ring-1 ring-border/50 transition-all hover:ring-primary/30">
-          <CardContent className="flex items-start gap-4 pt-2">
-            {member.image ? (
-              <img
-                src={member.image.src}
-                alt={member.name}
-                width={48}
-                height={48}
-                class="size-12 shrink-0 rounded-full object-cover ring-1 ring-border/50"
-              />
-            ) : (
-              <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                <span class="text-sm font-semibold text-primary">{member.initials}</span>
-              </div>
-            )}
-            <div class="flex min-w-0 flex-1 flex-col gap-1">
-              <h3 class="truncate text-base font-semibold text-foreground inline-flex items-center gap-2">
-                <a
-                  href={member.linkedin ?? "#"}
-                  target={member.linkedin ? "_blank" : undefined}
-                  rel={member.linkedin ? "noopener noreferrer" : undefined}
-                  class="flex size-7 items-center justify-center rounded text-muted-foreground transition-colors hover:text-primary"
-                  aria-label={`${member.name} on LinkedIn`}
+      {
+        team.map((member) => (
+          <Card className="group border-none bg-gradient-to-br from-card to-card/50 ring-1 ring-border/50 transition-all hover:ring-primary/30">
+            <CardContent className="flex items-start gap-4 pt-2">
+              {member.image ? (
+                <img
+                  src={member.image.src}
+                  alt={member.name}
+                  width={48}
+                  height={48}
+                  class="size-12 shrink-0 rounded-full object-cover ring-1 ring-border/50"
+                />
+              ) : (
+                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                  <span class="text-sm font-semibold text-primary">
+                    {member.initials}
+                  </span>
+                </div>
+              )}
+              <div class="flex min-w-0 flex-1 flex-col gap-1">
+                <h3 class="inline-flex items-center gap-2 truncate text-base font-semibold text-foreground">
+                  <a
+                    href={member.linkedin ?? "#"}
+                    target={member.linkedin ? "_blank" : undefined}
+                    rel={member.linkedin ? "noopener noreferrer" : undefined}
+                    class="flex size-7 items-center justify-center rounded text-muted-foreground transition-colors hover:text-primary"
+                    aria-label={`${member.name} on LinkedIn`}
                   >
-                  <svg class="size-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </a>
+                    <svg
+                      class="size-3.5"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                  </a>
                   {member.name}
-              </h3>
-              <span class="text-xs font-medium text-primary">{member.role}</span>
-              <p class="mt-1 text-sm text-muted-foreground">{member.credentials}</p>
-              <div class="mt-2 flex gap-2">
-                
-                {/* <a
+                </h3>
+                <span class="text-xs font-medium text-primary">
+                  {member.role}
+                </span>
+                <p class="mt-1 text-sm text-muted-foreground">
+                  {member.credentials}
+                </p>
+                <div class="mt-2 flex gap-2">
+                  {/* <a
                   href={member.email ? `mailto:${member.email}` : "mailto:contact@biohalo.com"}
                   class="flex size-7 items-center justify-center rounded text-muted-foreground transition-colors hover:text-primary"
                   aria-label={`Email ${member.name}`}
@@ -129,15 +153,18 @@ const team = [
                     <polyline points="22,6 12,13 2,6"/>
                   </svg>
                 </a> */}
+                </div>
               </div>
-            </div>
-          </CardContent>
-        </Card>
-      ))}
+            </CardContent>
+          </Card>
+        ))
+      }
     </div>
 
-    <div class="mt-20 flex flex-col items-center gap-8 text-center">
-      <h3 class="font-display text-4xl font-normal tracking-tight text-foreground md:text-6xl lg:text-7xl">
+    <div class="mt-20 flex hidden flex-col items-center gap-8 text-center">
+      <h3
+        class="font-display text-4xl font-normal tracking-tight text-foreground md:text-6xl lg:text-7xl"
+      >
         <span class="title-gradient">Get in touch</span>
       </h3>
       <div class="flex items-center gap-6">
@@ -148,8 +175,15 @@ const team = [
           class="flex size-12 items-center justify-center rounded-full bg-muted text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground md:size-14"
           aria-label="BioHalo on LinkedIn"
         >
-          <svg class="size-6 md:size-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          <svg
+            class="size-6 md:size-7"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+            ></path>
           </svg>
         </a>
         <a
@@ -157,9 +191,20 @@ const team = [
           class="flex size-12 items-center justify-center rounded-full bg-muted text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground md:size-14"
           aria-label="Email BioHalo"
         >
-          <svg class="size-6 md:size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
+          <svg
+            class="size-6 md:size-7"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+            ></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
           </svg>
         </a>
       </div>
