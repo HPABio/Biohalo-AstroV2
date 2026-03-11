@@ -6,6 +6,7 @@ import {
   CardDescription,
   CardContent,
 } from "@workspace/ui/components/card"
+import { Badge } from "@workspace/ui/components/badge"
 
 import { LightRays } from "@workspace/ui/components/light-rays.tsx"
 import type { View } from "lucide-react"
@@ -73,11 +74,9 @@ const features = [
     <div
       class="mx-auto flex flex-col items-center gap-4 text-center md:max-w-xl"
     >
-      <div
-        class="flex w-fit items-center justify-center gap-1 rounded-full border px-5 py-2 text-sm font-medium text-muted-foreground capitalize"
-      >
+      <Badge variant="section" className="mb-6">
         Our Solution
-      </div>
+      </Badge>
       <h2
         class="font-display text-3xl font-normal tracking-tight text-foreground md:text-5xl"
       >
