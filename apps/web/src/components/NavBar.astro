@@ -7,17 +7,19 @@ import logoWhite from "../assets/provided_materials/BioHalo_logo_png/BioHalo-Log
 const links = [
   { href: "#problem", label: "Problem" },
   { href: "#solution", label: "Solution" },
-  { href: "#technology", label: "Technology" },
-  { href: "#roadmap", label: "Roadmap" },
+  // { href: "#technology", label: "Technology" },
+  // { href: "#roadmap", label: "Roadmap" },
   { href: "#team", label: "Team" },
 ]
 ---
 
 <header
   id="site-header"
-  class="fixed top-0 left-0 right-0 z-40 transition-all duration-300"
+  class="fixed top-0 right-0 left-0 z-40 transition-all duration-300"
 >
-  <div class="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-4">
+  <div
+    class="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-4"
+  >
     <a href="/" class="flex items-center gap-2">
       <img
         src={logoWhite.src}
@@ -30,18 +32,20 @@ const links = [
     </a>
 
     <nav class="hidden items-center gap-1 md:flex">
-      {links.map((link) => (
-        <a
-          href={link.href}
-          class="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-        >
-          {link.label}
-        </a>
-      ))}
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            {link.label}
+          </a>
+        ))
+      }
     </nav>
 
     <div class="flex items-center gap-3">
-      <a href="#contact" class="hidden md:block">
+      <a href="mailto:info@biohalo.io" class="hidden md:block">
         <Button size="sm">Get in Touch</Button>
       </a>
       <MobileNav client:load />
@@ -54,9 +58,19 @@ const links = [
   if (header) {
     const onScroll = () => {
       if (window.scrollY > 50) {
-        header.classList.add("bg-background/80", "backdrop-blur-lg", "border-b", "border-border")
+        header.classList.add(
+          "bg-background/80",
+          "backdrop-blur-lg",
+          "border-b",
+          "border-border"
+        )
       } else {
-        header.classList.remove("bg-background/80", "backdrop-blur-lg", "border-b", "border-border")
+        header.classList.remove(
+          "bg-background/80",
+          "backdrop-blur-lg",
+          "border-b",
+          "border-border"
+        )
       }
     }
     window.addEventListener("scroll", onScroll, { passive: true })
