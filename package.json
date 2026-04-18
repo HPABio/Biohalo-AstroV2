@@ -10,10 +10,10 @@
     "typecheck": "turbo typecheck"
   },
   "devDependencies": {
-    "prettier": "^3.8.1",
+    "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "turbo": "^2.8.8",
+    "turbo": "^2.9.6",
     "typescript": "5.9.3"
   },
   "packageManager": "pnpm@9.0.6",
@@ -21,7 +21,8 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@fontsource/poppins": "^5.1.0"
+    "@fontsource/poppins": "^5.2.7",
+    "three": "^0.184.0"
   },
   "workspaces": [
     "apps/*",
