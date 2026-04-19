@@ -1,7 +1,7 @@
 import { Badge } from "@workspace/ui/components/badge";
 import { Button } from "@workspace/ui/components/button";
 import { ArrowUpRight, CirclePlay } from "lucide-react";
-import BioHaloLogoSVG from "@/assets/BioHalo-AstroV2 — BioHalo-Logo-Vector_white_font.svg";
+import BioHaloLogoSVG from "@/assets/provided_materials/BioHalo_logo_vector/BioHalo-Logo-Vector_white_font.svg";
 import AtomDiagram from "@/components/atom-diagram";
 // import Image from "@/components/ui/Image";
 
