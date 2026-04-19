@@ -1,14 +1,15 @@
 ---
 import ColorBends from "./BackGroundAnimation/ColorBends.tsx"
+import PlasmaWave from "@workspace/ui/components/PlasmaWave.tsx"
 import Hero from "./Hero.astro";
 ---
-<section class="relative h-screen w-screen bg-black">
+<section class="relative w-screen h-screen bg-black">
 	<div class="inset-0">
 		<!-- colors={["#ADDEDE", "#1D5566", "#00ffd1"]}
 		colors={["#ADDEDE", "#1D5566", "#00ffd1"]} -->
-		<ColorBends
+		<!-- <ColorBends
 			client:load
-			className="absolute bottom-0 right-0 w-full h-full blur-lg scale-150 rotate-180"
+			className="absolute hidden bottom-0 right-0 w-full h-full blur-lg scale-150 rotate-180"
 			colors={["#1D5566", "#ADDEDE", "#59A2AE"]}
 			rotation={0}
 			speed={0.2}
@@ -19,7 +20,20 @@ import Hero from "./Hero.astro";
 			parallax={0}
 			noise={0.1}
 			transparent={true}
-		/>
+		/> -->
+
+
+				<PlasmaWave
+					client:load
+					colors={["#41F0AD","#1D5566"]}
+					speed1={0}
+					speed2={0}
+					focalLength={1.7}
+					bend1={0}
+					bend2={1.8}
+					dir2={-1}
+					rotationDeg={177}
+				/>
 
 		<!-- Background Gradient to top -->
 		<div
@@ -33,7 +47,7 @@ import Hero from "./Hero.astro";
 
 	<!-- Hero Section with backdrop blur -->
 	<div
-		class="absolute top-0 left-0 h-screen w-screen overflow-hidden bg-black/20 flex items-start justify-center">
+		class="flex overflow-hidden absolute top-0 left-0 justify-center items-start w-screen h-screen bg-black/20">
 		<!-- Noise texture -->
 		<div
 		class="pointer-events-none absolute inset-0 opacity-[0.15]"
@@ -41,7 +55,7 @@ import Hero from "./Hero.astro";
 		>
 		</div>
 		
-		<div class="relative overflow-hidden flex items-center justify-center">
+		<div class="flex overflow-hidden relative justify-center items-center">
 			<Hero />
 		</div>
 	</div>
