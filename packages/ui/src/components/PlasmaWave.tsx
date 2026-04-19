@@ -123,7 +123,7 @@ export default function PlasmaWave(props: PlasmaWaveProps) {
   const {
     className = '',
     class: astroClass = '',
-    classNames = '',
+    classNames = 'w-full h-full',
     style,
     xOffset = 0,
     yOffset = 0,
@@ -253,7 +253,7 @@ export default function PlasmaWave(props: PlasmaWaveProps) {
     };
   }, []);
 
-  const combinedClassName = `w-full h-full ${className} ${astroClass} ${classNames}`.trim();
+  const combinedClassName = `${className} ${astroClass} ${classNames}`.trim();
 
   return <div ref={containerRef} className={combinedClassName} style={style} />;
 }
