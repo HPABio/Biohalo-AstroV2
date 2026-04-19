@@ -12,11 +12,11 @@ import { MenuIcon } from "lucide-react"
 import { useState } from "react"
 
 const links = [
-  { href: "#problem", label: "Problem" },
-  { href: "#solution", label: "Solution" },
-  { href: "#technology", label: "Technology" },
-  { href: "#roadmap", label: "Roadmap" },
-  { href: "#team", label: "Team" },
+  { href: "/#problem", label: "Problem" },
+  { href: "/#solution", label: "Solution" },
+  { href: "/#technology", label: "Technology" },
+  { href: "/#roadmap", label: "Roadmap" },
+  { href: "/#team", label: "Team" },
 ]
 
 export function MobileNav() {
