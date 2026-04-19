@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Renderer, Camera, Transform, Program, Mesh, Geometry } from 'ogl';
 
 function hexToRgb(hex: string): [number, number, number] {
@@ -113,10 +113,18 @@ interface PlasmaWaveProps {
   bend1?: number;
   bend2?: number;
   colors?: [string, string];
+  className?: string;
+  class?: string;
+  classNames?: string;
+  style?: React.CSSProperties;
 }
 
 export default function PlasmaWave(props: PlasmaWaveProps) {
   const {
+    className = '',
+    class: astroClass = '',
+    classNames = '',
+    style,
     xOffset = 0,
     yOffset = 0,
     rotationDeg = 0,
@@ -245,5 +253,7 @@ export default function PlasmaWave(props: PlasmaWaveProps) {
     };
   }, []);
 
-  return <div ref={containerRef} className="w-full h-full" />;
+  const combinedClassName = `w-full h-full ${className} ${astroClass} ${classNames}`.trim();
+
+  return <div ref={containerRef} className={combinedClassName} style={style} />;
 }
