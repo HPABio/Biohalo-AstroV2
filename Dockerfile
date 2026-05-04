@@ -1,19 +1,18 @@
-# Build stage: pnpm monorepo, Astro static site
-FROM node:20-alpine AS builder
+# Build stage: Bun monorepo, Astro static site
+FROM oven/bun:1.3-alpine AS builder
 
-RUN corepack enable && corepack prepare pnpm@9.0.6 --activate
 WORKDIR /app
 
 # Copy workspace and lockfile first for better layer caching
-COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
+COPY bun.lock package.json ./
 COPY packages ./packages
 COPY apps/web ./apps/web
 
 # Install all dependencies (including workspace packages)
-RUN pnpm install --frozen-lockfile
+RUN bun install --frozen-lockfile
 
 # Build the web app and its workspace dependencies
-RUN pnpm --filter web build
+RUN bun run --filter web build
 
 # Production stage: nginx serves static files
 FROM nginx:alpine AS runner
