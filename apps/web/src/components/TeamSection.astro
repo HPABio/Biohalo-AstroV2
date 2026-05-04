@@ -7,6 +7,7 @@ import johannLiebeton from "@/assets/images/BioHaloTeam/JohannLiebeton.png"
 import nicoKrink from "@/assets/images/BioHaloTeam/NicoKrink.png"
 import pabloNikel from "@/assets/images/BioHaloTeam/PabloNikel.png"
 import arthurVancolen from "@/assets/images/BioHaloTeam/ArthurVancolen.png"
+import andreasHeyl from "@/assets/provided_materials/Provided_Materials/2026_Andreas Heyl 1.png"
 
 const team = [
   {
@@ -61,9 +62,9 @@ const team = [
   },
   {
     name: "Andreas Heyl",
-    role: "Scientific Commercialization Advisor",
+    role: "Scaling & Commercialisation Advisor",
     initials: "AH",
-    image: undefined,
+    image: andreasHeyl,
     credentials: "Leading R&D teams. Former co-founder and CTO of Insempra.",
     linkedin: undefined as string | undefined,
     email: undefined as string | undefined,
@@ -73,18 +74,18 @@ const team = [
 
 <section id="team" class="relative py-16 md:py-24">
   <div
-    class="pointer-events-none absolute inset-0"
+    class="absolute inset-0 pointer-events-none"
     style="background: radial-gradient(ellipse 40% 40% at 50% 30%, oklch(0.5 0 0 / 0.04) 0%, transparent 70%);"
   >
   </div>
 
-  <div class="relative mx-auto max-w-screen-xl px-6">
+  <div class="relative px-6 mx-auto max-w-screen-xl">
     <div class="mb-8 text-center md:mb-16">
       <Badge variant="section" className="mb-4">
         Team
       </Badge>
       <h2
-        class="font-display text-3xl font-normal tracking-tight text-foreground md:text-5xl"
+        class="text-3xl font-normal tracking-tight font-display text-foreground md:text-5xl"
       >
         <span class="title-gradient">Leadership</span> Team
       </h2>
@@ -106,22 +107,22 @@ const team = [
                   alt={member.name}
                   width={48}
                   height={48}
-                  class="size-12 shrink-0 rounded-full object-cover ring-1 ring-border/50"
+                  class="object-cover rounded-full ring-1 size-12 shrink-0 ring-border/50"
                 />
               ) : (
-                <div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                <div class="flex justify-center items-center rounded-full size-12 shrink-0 bg-primary/10">
                   <span class="text-sm font-semibold text-primary">
                     {member.initials}
                   </span>
                 </div>
               )}
-              <div class="flex min-w-0 flex-1 flex-col gap-1">
-                <h3 class="inline-flex items-center gap-2 truncate text-base font-semibold text-foreground">
+              <div class="flex flex-col flex-1 gap-1 min-w-0">
+                <h3 class="inline-flex gap-2 items-center text-base font-semibold truncate text-foreground">
                   <a
                     href={member.linkedin ?? "#"}
                     target={member.linkedin ? "_blank" : undefined}
                     rel={member.linkedin ? "noopener noreferrer" : undefined}
-                    class="flex size-7 items-center justify-center rounded text-muted-foreground transition-colors hover:text-primary"
+                    class="flex justify-center items-center rounded transition-colors size-7 text-muted-foreground hover:text-primary"
                     aria-label={`${member.name} on LinkedIn`}
                   >
                     <svg
@@ -141,10 +142,10 @@ const team = [
                 <p class="mt-1 text-sm text-muted-foreground">
                   {member.credentials}
                 </p>
-                <div class="mt-2 flex gap-2">
+                <div class="flex gap-2 mt-2">
                   {/* <a
                   href={member.email ? `mailto:${member.email}` : "mailto:contact@biohalo.com"}
-                  class="flex size-7 items-center justify-center rounded text-muted-foreground transition-colors hover:text-primary"
+                  class="flex justify-center items-center rounded transition-colors size-7 text-muted-foreground hover:text-primary"
                   aria-label={`Email ${member.name}`}
                 >
                   <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -160,18 +161,18 @@ const team = [
       }
     </div>
 
-    <div class="mt-20 flex hidden flex-col items-center gap-8 text-center">
+    <div class="flex hidden flex-col gap-8 items-center mt-20 text-center">
       <h3
-        class="font-display text-4xl font-normal tracking-tight text-foreground md:text-6xl lg:text-7xl"
+        class="text-4xl font-normal tracking-tight font-display text-foreground md:text-6xl lg:text-7xl"
       >
         <span class="title-gradient">Get in touch</span>
       </h3>
-      <div class="flex items-center gap-6">
+      <div class="flex gap-6 items-center">
         <a
           href="https://www.linkedin.com/company/biohalo"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex size-12 items-center justify-center rounded-full bg-muted text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground md:size-14"
+          class="flex justify-center items-center rounded-full transition-colors size-12 bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground md:size-14"
           aria-label="BioHalo on LinkedIn"
         >
           <svg
@@ -187,7 +188,7 @@ const team = [
         </a>
         <a
           href="mailto:contact@biohalo.com"
-          class="flex size-12 items-center justify-center rounded-full bg-muted text-muted-foreground transition-colors hover:bg-primary hover:text-primary-foreground md:size-14"
+          class="flex justify-center items-center rounded-full transition-colors size-12 bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground md:size-14"
           aria-label="Email BioHalo"
         >
           <svg

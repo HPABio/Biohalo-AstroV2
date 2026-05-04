@@ -1,5 +1,6 @@
 ---
 import logo from "../assets/images/BioHaloLogo.png"
+import euCoFinancingBanner from "../assets/provided_materials/Provided_Materials/EU-bz2-logofrise.png"
 
 const columns = [
   {
@@ -86,6 +87,25 @@ const columns = [
     </div>
 
     <div class="my-8 h-px w-full bg-border"></div>
+
+    <div
+      class="mb-8 flex flex-col items-center gap-3 border border-border/40 bg-black px-4 py-6 md:px-6"
+      role="region"
+      aria-label="EU co-financing"
+    >
+      <p class="text-center text-xs font-medium text-white/90">
+        Co-financed by the European Union
+      </p>
+      <img
+        src={euCoFinancingBanner.src}
+        alt="EU co-financing and partner logos: Biosolutions Zealand, European Union, Erhvervsfyrtårn Biosolutions."
+        width={euCoFinancingBanner.width}
+        height={euCoFinancingBanner.height}
+        class="h-auto w-full max-w-4xl object-contain"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
 
     <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
       <p class="text-xs text-muted-foreground">
